@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel Gasparino — Writer, Copywriter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#fff;color:#000;font-family:Arial,Helvetica,sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+
+  /* ============ HERO / NAV ============ */
+  .hero{position:relative;overflow:hidden;}
+  .hero-bar{background:#000;padding:10px clamp(20px,6vw,47px);display:flex;justify-content:flex-end;}
+  .hero-nav{display:flex;gap:clamp(10px,3vw,28px);color:#fff;font-size:clamp(9px,2.2vw,13px);font-family:Arial;}
+  .hero-title-wrap{padding:clamp(28px,10vw,70px) clamp(20px,6vw,47px) clamp(24px,7vw,50px);text-align:center;}
+  .name{font-family:'Marcellus SC',serif;font-size:clamp(26px,8vw,80px);color:#000;line-height:1.15;}
+  .subtitle{font-family:'Marcellus',serif;font-size:clamp(15px,5vw,26px);color:#000;margin-top:.4em;}
+
+  /* ============ CONTENT BLOCKS ============ */
+  .block{padding:clamp(28px,9vw,60px) clamp(20px,6vw,47px);}
+  .label{font-family:Arial;font-weight:700;font-size:clamp(9px,2.3vw,15px);margin-bottom:1.1em;}
+  .body-text{font-family:Arial;font-weight:400;font-size:clamp(9px,2.3vw,15px);line-height:1.5;max-width:900px;}
+  .body-text p{margin-bottom:1.1em;}
+  .body-text p:last-child{margin-bottom:0;}
+
+  .photo{width:100%;display:block;}
+  .photo img{width:100%;display:block;object-fit:cover;}
+  .photo.about-photo img{aspect-ratio:308/183;}
+  .photo.early-photo img{aspect-ratio:308/192;}
+
+  /* two-column life section */
+  .life-grid{display:grid;grid-template-columns:1fr;gap:clamp(24px,8vw,40px);}
+  .life-col .label{margin-bottom:1.4em;}
+  .life-entry{margin-bottom:1.2em;font-size:clamp(9px,2.3vw,15px);line-height:1.5;}
+  .life-entry .yr{font-weight:700;}
+  .life-entry .org{font-weight:400;}
+
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(6px,2vw,16px);margin-top:clamp(20px,6vw,34px);}
+  .duo img{width:100%;aspect-ratio:150/180;object-fit:cover;display:block;}
+
+  .projects-text{font-family:Arial;font-size:clamp(9px,2.3vw,15px);line-height:1.7;max-width:1100px;}
+
+  /* manifesto + footer */
+  .manifesto{background:#000;color:#fff;padding:clamp(32px,10vw,80px) clamp(20px,6vw,47px);}
+  .manifesto .kicker{font-family:'Marcellus SC',serif;font-size:clamp(11px,3vw,17px);margin-bottom:1.2em;}
+  .manifesto h2{font-family:'Marcellus',serif;font-weight:400;font-size:clamp(19px,6vw,44px);line-height:1.3;margin-bottom:.7em;}
+  .manifesto p{font-family:'Marcellus',serif;font-size:clamp(11px,3vw,17px);line-height:1.55;max-width:640px;}
+
+  footer{background:#000;color:#fff;padding:clamp(26px,8vw,50px) clamp(20px,6vw,47px);}
+  footer .foot-name{font-family:'Marcellus SC',serif;font-size:clamp(15px,4.5vw,30px);}
+
+  /* ============ DESKTOP LAYOUT ============ */
+  @media (min-width:900px){
+    .hero-title-wrap{padding:60px 60px 40px;}
+    .name{font-size:clamp(56px,7vw,96px);}
+    .subtitle{font-size:clamp(18px,2vw,26px);}
+    .hero-nav{font-size:14px;gap:34px;}
+    .hero-bar{padding:22px 60px;}
+
+    .block{max-width:1440px;margin:0 auto;padding:60px 60px;}
+    .body-text,.projects-text{font-size:18px;}
+    .label{font-size:16px;}
+
+    .about-block{display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;align-items:start;}
+    .about-block .photo{align-self:stretch;}
+    .about-block .photo img{height:100%;aspect-ratio:auto;}
+
+    .early-block{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:start;}
+    .early-block .photo img{aspect-ratio:auto;height:100%;}
+
+    .life-grid{grid-template-columns:1fr 1fr;gap:80px;}
+    .life-entry{font-size:18px;}
+
+    .duo{max-width:640px;}
+
+    .manifesto{padding:110px 60px;}
+    .manifesto-inner{max-width:1440px;margin:0 auto;}
+    .manifesto h2{font-size:52px;max-width:820px;}
+    .manifesto p{font-size:19px;}
+
+    footer{padding:60px;}
+    .foot-name{font-size:34px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-bar">
+    <nav class="hero-nav">
+      <a href="#about">About</a>
+      <a href="#early-life">Early Life</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="hero-title-wrap">
+    <div class="name">DANIEL GASPARINO</div>
+    <div class="subtitle">Writer, copywriter</div>
+  </div>
+</div>
+
+<section class="block about-block" id="about">
+  <div>
+    <div class="label">About</div>
+    <div class="body-text">
+      <p>Writer since 2017, Copywriter since 2021.</p>
+      <p>Every single company I worked with has benefited from a primary skill of mine: my ability to deep learning and deep work.</p>
+      <p>Alongside with those skills, as a self-taught student, I explored multiple topics to enhance value on a professional standpoint: marketing, entrepreneurship, business, branding, positioning, statistics, data and analytics&hellip;</p>
+      <p>&hellip;and also on a personal standpoint: philosophy, literature, psychology, economics, history and religion.</p>
+    </div>
+  </div>
+  <div class="photo about-photo"><img src="assets/indaiatuba.jpg" alt="Indaiatuba, São Paulo"></div>
+</section>
+
+<section class="block early-block" id="early-life">
+  <div class="photo early-photo"><img src="assets/childhood.jpg" alt="Daniel as a kid, with friends"></div>
+  <div>
+    <div class="label">Early Life</div>
+    <div class="body-text">
+      <p>I was born on March 14th, 2002, in Indaiatuba, São Paulo, Brazil. Always encouraged by my parents to pursue education so that I could provide for myself in a way that they couldn&rsquo;t. At 15, I remember writing my first essay for a Portuguese class and immediately became captivated by it.</p>
+      <p>In those years I used writing as a way to express myself, and later on as a way to earn my first financial income.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="life-grid">
+    <div class="life-col">
+      <div class="label">Academic Life</div>
+      <div class="life-entry"><span class="yr">2020 &mdash; Bachelor&rsquo;s degree in Language and Literature</span><br><span class="org">FFLCH-USP</span></div>
+      <div class="life-entry"><span class="yr">2024 &mdash; Associate&rsquo;s degree</span><br><span class="org">UniMAX</span></div>
+    </div>
+    <div class="life-col">
+      <div class="label">Professional Life</div>
+      <div class="life-entry"><span class="yr">2021 &mdash; Intern and Copywriter Jr.</span><br><span class="org">Bussolla</span></div>
+      <div class="life-entry"><span class="yr">2024 &mdash; Copywriter</span><br><span class="org">Birdclick</span></div>
+      <div class="life-entry"><span class="yr">2025 &mdash; Copywriter</span><br><span class="org">V4 Company</span></div>
+      <div class="life-entry"><span class="yr">2026 &mdash; Marketing Coordinator</span><br><span class="org">Mazix (Agro Ibex)</span></div>
+      <div class="duo">
+        <img src="assets/formal-event.jpg" alt="Daniel with family">
+        <img src="assets/garage.jpg" alt="Daniel, portrait">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="projects">
+  <div class="label">Projects</div>
+  <div class="projects-text">La Fit &middot; Bridgen &middot; Cookielandia &middot; Pet &amp; Pet &middot; Simmons &middot; Cakesana &middot; Flip! &middot; Nous &middot; Sky Fit Academia &middot; V4 Company USA &middot; João O Pecuário &middot; Adilson O Pecuário &middot; Leite Bovin</div>
+</section>
+
+<section class="block" id="contact">
+  <div class="label">Contact</div>
+  <div class="body-text">
+    <p>@dangasparino_<br>+55 19 98936&#8209;5335<br>danielvecchigasparino@gmail.com</p>
+  </div>
+</section>
+
+<div class="manifesto">
+  <div class="manifesto-inner">
+    <div class="kicker">MANIFESTO</div>
+    <h2>Personal Manifesto<br>for AI Writing</h2>
+    <p>Writing is a way to bring discernment to complexity — and technology should strengthen the human voice behind it.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-name">DANIEL GASPARINO</div>
+</footer>
+
+</body>
+</html>
