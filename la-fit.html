@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Fit — Daniel Gasparino</title>
+<link rel="icon" type="image/png" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#fff;color:#000;font-family:Arial,Helvetica,sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+
+  /* ============ TOP BAR ============ */
+  .proj-bar{position:sticky;top:0;z-index:50;background:#000;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:clamp(14px,3.5vw,22px) clamp(20px,6vw,47px);}
+  .proj-logo{font-family:'Marcellus SC',serif;font-size:clamp(13px,3.2vw,17px);display:flex;align-items:center;gap:.6em;}
+  .proj-logo svg{width:22px;height:22px;flex-shrink:0;}
+
+  .menu-toggle{background:none;border:none;cursor:pointer;width:26px;height:18px;position:relative;padding:0;}
+  .menu-toggle span{position:absolute;left:0;width:100%;height:2px;background:#fff;transition:transform .25s ease,opacity .25s ease,top .25s ease;}
+  .menu-toggle span:first-child{top:0;}
+  .menu-toggle span:last-child{top:16px;}
+  .menu-toggle.open span:first-child{top:8px;transform:rotate(45deg);}
+  .menu-toggle.open span:last-child{top:8px;transform:rotate(-45deg);}
+
+  /* ============ MENU OVERLAY ============ */
+  .menu-overlay{position:fixed;inset:0;background:#000;color:#fff;z-index:40;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;}
+  .menu-overlay.open{opacity:1;pointer-events:auto;}
+  .menu-overlay ul{text-align:center;}
+  .menu-overlay li{margin:clamp(14px,4vw,22px) 0;}
+  .menu-overlay a{font-family:'Marcellus SC',serif;font-size:clamp(22px,6vw,40px);}
+  .menu-overlay a:hover{opacity:.6;}
+
+  /* ============ INTRO ============ */
+  .proj-intro{padding:clamp(40px,10vw,90px) clamp(20px,6vw,47px) clamp(28px,7vw,50px);max-width:1440px;margin:0 auto;}
+  .proj-title{font-family:'Marcellus SC',serif;font-size:clamp(30px,8vw,64px);line-height:1.1;margin-bottom:clamp(20px,5vw,36px);}
+  .proj-text{font-family:Arial;font-size:clamp(9px,2.3vw,15px);line-height:1.6;max-width:640px;}
+  .proj-text p{margin-bottom:1.1em;}
+  .proj-text p:last-child{margin-bottom:0;}
+
+  /* ============ GALLERY ============ */
+  .proj-gallery{display:flex;flex-direction:column;gap:clamp(10px,3vw,18px);padding:0 clamp(20px,6vw,47px) clamp(40px,10vw,80px);max-width:1440px;margin:0 auto;}
+  .proj-img{width:100%;background:#ececec;border:1px dashed #b3b3b3;display:flex;align-items:center;justify-content:center;color:#8a8a8a;font-family:Arial;font-size:clamp(10px,2.2vw,13px);letter-spacing:.05em;text-transform:uppercase;}
+
+  /* ============ NEXT PROJECT ============ */
+  .next-project{display:block;background:#000;color:#fff;padding:clamp(40px,11vw,100px) clamp(20px,6vw,47px);text-align:center;}
+  .next-label{display:block;font-family:Arial;font-weight:700;font-size:clamp(9px,2.3vw,14px);letter-spacing:.08em;margin-bottom:.8em;opacity:.7;}
+  .next-name{display:block;font-family:'Marcellus SC',serif;font-size:clamp(24px,7vw,52px);}
+  .next-project:hover .next-name{opacity:.7;}
+
+  /* ============ FOOTER ============ */
+  footer{background:#000;color:#fff;padding:clamp(26px,8vw,50px) clamp(20px,6vw,47px);}
+  .footer-grid{display:grid;grid-template-columns:1fr;gap:clamp(24px,7vw,40px);max-width:1440px;margin:0 auto;}
+  .foot-name{font-family:'Marcellus SC',serif;font-size:clamp(15px,4.5vw,30px);margin-bottom:.5em;}
+  .foot-role{font-family:Arial;font-size:clamp(9px,2.3vw,14px);line-height:1.6;opacity:.85;}
+  .foot-label{font-family:Arial;font-weight:700;font-size:clamp(9px,2.3vw,14px);margin-bottom:.8em;}
+  .foot-contact{font-family:Arial;font-size:clamp(9px,2.3vw,14px);line-height:1.6;opacity:.85;}
+
+  /* ============ DESKTOP ============ */
+  @media (min-width:900px){
+    .proj-bar{padding:22px 60px;}
+    .proj-intro{padding:100px 60px 60px;display:grid;grid-template-columns:0.9fr 1.1fr;gap:60px;align-items:end;}
+    .proj-title{font-size:clamp(56px,6vw,80px);margin-bottom:0;}
+    .proj-text{font-size:18px;}
+    .proj-gallery{padding:0 60px 100px;gap:20px;}
+    .next-name{font-size:56px;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    footer{padding:60px;}
+    .foot-name{font-size:34px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="proj-bar">
+  <a class="proj-logo" href="index.html">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(16,16) scale(0.8) translate(-16,-16)">
+        <rect x="13" y="2" width="6" height="4" rx="1" fill="#f2749b"/>
+        <rect x="13" y="6" width="6" height="2.5" fill="#d9d9d9"/>
+        <rect x="13" y="8.5" width="6" height="15" fill="#ffcc4d"/>
+        <rect x="13" y="8.5" width="1.5" height="15" fill="#f2b100" opacity="0.6"/>
+        <polygon points="13,23.5 19,23.5 16,28" fill="#e6b273"/>
+        <polygon points="14.6,26.6 17.4,26.6 16,29.5" fill="#664500"/>
+        <polygon points="15.3,28 16.7,28 16,29.5" fill="#2b2b2b"/>
+      </g>
+    </svg>
+    DANIEL GASPARINO
+  </a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+    <span></span><span></span>
+  </button>
+</header>
+
+<nav class="menu-overlay" id="menuOverlay">
+  <ul>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="personal-manifesto-on-the-future-of-copywriting-and-ai-writing.html">Manifesto</a></li>
+  </ul>
+</nav>
+
+<section class="proj-intro">
+  <div>
+    <div class="proj-title">La Fit</div>
+  </div>
+  <div class="proj-text">
+    <p>[Substituir: uma frase curta dizendo o que é o projeto La Fit — ex. "Copywriting e posicionamento de marca para La Fit."]</p>
+    <p>[Substituir: parágrafo com o contexto/desafio do projeto — o que o cliente precisava e por quê.]</p>
+    <p>[Substituir: parágrafo com a solução/abordagem que você aplicou.]</p>
+  </div>
+</section>
+
+<section class="proj-gallery">
+  <div class="proj-img" style="aspect-ratio:16/9;">Imagem 1 — capa do projeto La Fit</div>
+  <div class="proj-img" style="aspect-ratio:4/3;">Imagem 2</div>
+  <div class="proj-img" style="aspect-ratio:16/9;">Imagem 3</div>
+  <div class="proj-img" style="aspect-ratio:1/1;">Imagem 4</div>
+  <div class="proj-img" style="aspect-ratio:16/9;">Imagem 5</div>
+</section>
+
+<a class="next-project" href="bridgen.html">
+  <span class="next-label">Próximo Projeto</span>
+  <span class="next-name">Bridgen →</span>
+</a>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="foot-name">D—G</div>
+      <div class="foot-role">Writer &amp; Copywriter.<br>Brazil 🇧🇷<br>&copy;2002</div>
+    </div>
+    <div>
+      <div class="foot-label">Contact</div>
+      <div class="foot-contact">@dangasparino_<br>+55 19 98936&#8209;5335<br>danielvecchigasparino@gmail.com</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const overlay = document.getElementById('menuOverlay');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('open');
+    overlay.classList.toggle('open');
+  });
+  overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    toggle.classList.remove('open');
+    overlay.classList.remove('open');
+  }));
+</script>
+
+</body>
+</html>
