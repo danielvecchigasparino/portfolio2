@@ -40,6 +40,7 @@
   .proj-text{font-family:Arial;font-size:clamp(9px,2.3vw,15px);line-height:1.6;max-width:640px;}
   .proj-text p{margin-bottom:1.1em;}
   .proj-text p:last-child{margin-bottom:0;}
+  .proj-link{display:inline-block;font-weight:700;border-bottom:1px solid currentColor;padding-bottom:1px;}
 
   /* ============ GALLERY ============ */
   .proj-gallery{display:flex;flex-direction:column;gap:clamp(10px,3vw,18px);padding:0 clamp(20px,6vw,47px) clamp(40px,10vw,80px);max-width:1440px;margin:0 auto;}
@@ -53,6 +54,9 @@
 
   /* ============ FOOTER ============ */
   footer{background:#000;color:#fff;padding:clamp(26px,8vw,50px) clamp(20px,6vw,47px);}
+  .foot-links{display:flex;gap:12px;margin-top:1em;}
+  .foot-icon{width:clamp(28px,7vw,34px);height:clamp(28px,7vw,34px);border:1px solid rgba(255,255,255,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Marcellus SC',serif;font-size:clamp(11px,3vw,14px);color:#fff;text-decoration:none;transition:opacity .2s,border-color .2s;}
+  .foot-icon:hover{opacity:.6;border-color:#fff;}
   .footer-grid{display:grid;grid-template-columns:1fr;gap:clamp(24px,7vw,40px);max-width:1440px;margin:0 auto;}
   .foot-name{font-family:'Marcellus SC',serif;font-size:clamp(15px,4.5vw,30px);margin-bottom:.5em;}
   .foot-role{font-family:Arial;font-size:clamp(9px,2.3vw,14px);line-height:1.6;opacity:.85;}
@@ -108,9 +112,9 @@
     <div class="proj-title">Flip!</div>
   </div>
   <div class="proj-text">
-    <p>[Substituir: uma frase curta dizendo o que é o projeto Flip! — ex. "Copywriting e posicionamento de marca para Flip!."]</p>
-    <p>[Substituir: parágrafo com o contexto/desafio do projeto — o que o cliente precisava e por quê.]</p>
-    <p>[Substituir: parágrafo com a solução/abordagem que você aplicou.]</p>
+    <p>Naming for a gymnastics academy.</p>
+    <p><a class="proj-link" href="https://www.instagram.com/flipacademiadeginastica/" target="_blank" rel="noopener">Ver no Instagram &#8599;</a></p>
+    <p style="opacity:.6;">Veja tamb&eacute;m: <a class="proj-link" href="https://www.instagram.com/raquelbrasilmentora/" target="_blank" rel="noopener">Raquel Brasil Mentora &#8599;</a></p>
   </div>
 </section>
 
@@ -136,6 +140,12 @@
     <div>
       <div class="foot-label">Contact</div>
       <div class="foot-contact">@dangasparino_<br>+55 19 98936&#8209;5335<br>danielvecchigasparino@gmail.com</div>
+      <div class="foot-links">
+        <a class="foot-icon" href="https://www.instagram.com/dangasparino_/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 100 100" width="55%" height="55%"><rect x="10" y="10" width="80" height="80" rx="22" ry="22" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="74" cy="26" r="6" fill="currentColor"/></svg></a>
+    <a class="foot-icon" href="https://www.linkedin.com/in/dangasparino/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 100 100" width="55%" height="55%"><circle cx="21" cy="18" r="10" fill="currentColor"/><rect x="13" y="35" width="16" height="50" fill="currentColor"/><path d="M45,85 V35 H61 V43 C66,36 74,33 82,33 C92,33 98,40 98,52 V85 H82 V56 C82,49 79,45 73,45 C67,45 63,49 63,56 V85 Z" fill="currentColor"/></svg></a>
+    <a class="foot-icon" href="https://medium.com/@daniel-gasparino" target="_blank" rel="noopener" aria-label="Medium"><svg viewBox="0 0 100 100" width="60%" height="60%"><ellipse cx="30" cy="50" rx="24" ry="24" fill="currentColor"/><ellipse cx="68" cy="50" rx="11" ry="21" fill="currentColor"/><ellipse cx="90" cy="50" rx="4" ry="19" fill="currentColor"/></svg></a>
+        <a class="foot-icon" href="https://minervapalace.substack.com/" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 100 100" width="55%" height="55%"><path d="M20,12 L80,12 L80,92 L50,72 L20,92 Z" fill="currentColor"/><rect x="20" y="30" width="60" height="10" fill="#000"/><rect x="20" y="48" width="60" height="10" fill="#000"/></svg></a>
+      </div>
     </div>
   </div>
 </footer>
