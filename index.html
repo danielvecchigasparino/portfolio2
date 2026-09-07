@@ -4,6 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>D-G | Portfolio</title>
+  
+  <!-- REGRA DE REGÊNCIA (Chave de troca) -->
+  <style>
+    /* Padrão no celular: esconde o Desktop */
+    #versao-desktop { display: none !important; }
+    #versao-mobile  { display: block !important; }
+
+    /* Padrão na tela grande (acima de 900px): esconde o Mobile */
+    @media (min-width: 900px) {
+      #versao-mobile  { display: none !important; }
+      #versao-desktop { display: block !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =================================================================
+       BLOCO 1: TUDO DO MOBILE (CSS + HTML JUNTO)
+       ================================================================= -->
+  <div id="versao-mobile">
+
+    <!-- CSS EXCLUSIVO DO MOBILE -->
+    <style>
+      #versao-mobile {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        line-height: 1.5;
+        padding: 16px;
+        min-height: 100vh;
+      }
+
+      #versao-mobile a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      #versao-mobile hr {
+        border: none;
+        border-top: 1.5px solid white;
+        margin: 20px 0;
+      }
+
+      #versao-mobile .portfolio-item {
+        margin-bottom: 30px;
+        width: 100%;
+      }
+
+      #versao-mobile .portfolio-item > img {
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        display: block;
+        margin-top: 8px;
+      }
+
+      #versao-mobile .img-group {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+        margin-top: 8px;
+      }
+
+      #versao-mobile .img-group img {
+        width: 50%;
+        flex: 1;
+        min-width: 0;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+      }
+    </style>
+
+    <!-- HTML EXCLUSIVO DO MOBILE -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>D-G | Portfolio</title>
   <style>
     * {
       box-sizing: border-box;
@@ -228,6 +309,36 @@
       <a href="tel:+5519989365335">+55 19 989365-335</a><br/>
       <a href="mailto:danielvecchigasparino@gmail.com">danielvecchigasparino@gmail.com</a>
     </p>
+  </div>
+
+</body>
+</html>
+    <!-- Fim do conteúdo Mobile -->
+  </div>
+
+
+  <!-- =================================================================
+       BLOCO 2: TUDO DO DESKTOP (CSS + HTML JUNTO)
+       ================================================================= -->
+  <div id="versao-desktop">
+
+    <!-- CSS EXCLUSIVO DO DESKTOP -->
+    <style>
+      #versao-desktop {
+        background-color: #000;
+        color: #fff;
+        /* Cole aqui todas as regras do seu CSS de Desktop */
+      }
+      
+      /* Seus estilos específicos de desktop entram aqui... */
+    </style>
+
+    <!-- HTML EXCLUSIVO DO DESKTOP -->
+    <header class="header">
+      <!-- Seu menu desktop, hero, galeria em grid desktop, etc. -->
+    </header>
+
+    <!-- Fim do conteúdo Desktop -->
   </div>
 
 </body>
