@@ -367,12 +367,37 @@
     #versao-desktop .t-org { opacity: .5; font-size: .9em; }
 
     /* ============ PROJECTS GRID ============ */
-    #versao-desktop .projects-grid { display: grid; grid-template-columns: 1fr; gap: clamp(32px, 9vw, 60px) 0; }
-    #versao-desktop .portfolio-item { margin-bottom: 30px; width: 100%; }
-    #versao-desktop .portfolio-item > img { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; margin-top: 8px; }
-    #versao-desktop .img-group { display: flex; gap: 8px; width: 100%; margin-top: 8px; }
-    #versao-desktop .img-group img { width: 50%; flex: 1; min-width: 0; aspect-ratio: 1 / 1; object-fit: cover; }
-    #versao-desktop .section-title { font-family: 'Marcellus', serif, Arial; color: #000000; margin-top: 12px; font-size: clamp(15px, 4vw, 22px); }
+    /* ============ PROJECTS GRID (2 COLUNAS) ============ */
+    #versao-desktop .projects-grid { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 40px 30px; 
+    }
+    
+    #versao-desktop .portfolio-item { width: 100%; }
+    #versao-desktop .portfolio-item > img { 
+      width: 100%; 
+      max-width: 100%; 
+      aspect-ratio: 16 / 9; 
+      object-fit: cover; 
+      display: block; 
+    }
+    
+    #versao-desktop .img-group { display: flex; gap: 8px; width: 100%; }
+    #versao-desktop .img-group img { 
+      width: 50%; 
+      flex: 1; 
+      min-width: 0; 
+      aspect-ratio: 1 / 1; 
+      object-fit: cover; 
+    }
+    
+    #versao-desktop .section-title { 
+      font-family: 'Marcellus', serif, Arial; 
+      color: #000000; 
+      margin-top: 12px; 
+      font-size: clamp(15px, 2vw, 20px); 
+    }
 
     /* manifesto + footer */
     #versao-desktop .manifesto { background: #000000; color: #FFFFFF; padding: clamp(32px, 10vw, 80px) clamp(20px, 6vw, 47px); }
@@ -458,44 +483,50 @@
       </div>
     </div>
   </section>
-
-  <section class="block" id="projects">
-    <div class="portfolio-item">
-      <img src="assets/v4gif.gif" alt="V4 Company" />
-      <div class="section-title">V4 Company</div>
-    </div>
-
-    <div class="portfolio-item">
-      <img src="assets/simmons-cover.jpg" alt="Simmons" />
-      <div class="section-title">Simmons</div>
-    </div>
-
-    <div class="portfolio-item">
-      <img src="assets/la-fit-cover.jpg" alt="La Fit" />
-      <div class="section-title">La Fit</div>
-    </div>
-
-    <div class="portfolio-item">
-      <img src="assets/joaoopecuario.gif" alt="João O Pecuário" />
-      <div class="section-title">João O Pecuário</div>
-    </div>
-
-    <div class="portfolio-item">
-      <div class="img-group">
-        <img src="assets/flip1.png" alt="Flip 1" />
-        <img src="assets/flip2.png" alt="Flip 2" />
+    
+    <section class="block" id="projects">
+    <div class="projects-grid">
+      
+      <div class="portfolio-item">
+        <img src="assets/v4gif.gif" alt="V4 Company" />
+        <div class="section-title">V4 Company</div>
       </div>
-      <div class="section-title">Flip!</div>
-    </div>
 
-    <div class="portfolio-item">
-      <img src="assets/bovin.gif" alt="Bovin" />
-      <div class="section-title">Bovin</div>
-    </div>
+      <div class="portfolio-item">
+        <img src="assets/simmons-cover.jpg" alt="Simmons" />
+        <div class="section-title">Simmons</div>
+      </div>
 
-    <div class="portfolio-item">
-      <img src="assets/apolovecchi.gif" alt="Apolo Vecchi" />
-      <div class="section-title">Apolo Vecchi</div>
+      <div class="portfolio-item">
+        <img src="assets/la-fit-cover.jpg" alt="La Fit" />
+        <div class="section-title">La Fit</div>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="assets/joaoopecuario.gif" alt="João O Pecuário" />
+        <div class="section-title">João O Pecuário</div>
+      </div>
+
+      <div class="portfolio-item">
+        <div class="img-group">
+          <img src="assets/flip1.png" alt="Flip 1" />
+          <img src="assets/flip2.png" alt="Flip 2" />
+        </div>
+        <div class="section-title">Flip!</div>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="assets/bovin.gif" alt="Bovin" />
+        <div class="section-title">Bovin</div>
+      </div>
+
+      <div class="portfolio-item">
+        <img src="assets/apolovecchi.gif" alt="Apolo Vecchi" />
+        <div class="section-title">Apolo Vecchi</div>
+      </div>
+
+      <!-- Quando for adicionar o Petpet, basta colocar o .portfolio-item dele logo abaixo do Apolo Vecchi -->
+
     </div>
   </section>
 
