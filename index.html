@@ -2,8 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <!-- Garante que a tela do celular renderize na escala correta sem zoom indesejado -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>D-G | Portfolio</title>
   <style>
     * {
@@ -12,16 +11,20 @@
       padding: 0;
     }
 
-    body {
+    html, body {
+      width: 100%;
+      max-width: 100vw;
+      overflow-x: hidden; /* Evita qualquer sobra preta lateral */
       background-color: black;
       color: white;
+    }
+
+    body {
       font-family: Arial, sans-serif;
-      font-size: 11px; /* Ajustado para melhor leitura no celular */
+      font-size: 11px;
       line-height: 1.5;
       padding: 16px;
-      width: 100%;
       min-height: 100vh;
-      overflow-x: hidden; /* Evita rolagem horizontal acidental */
     }
 
     /* Linhas divisórias */
@@ -71,18 +74,34 @@
     /* Imagens e Portfólio */
     .portfolio-item {
       margin-bottom: 30px;
+      width: 100%;
     }
 
-    img {
+    /* Padroniza todas as imagens/GIFs em bloco único para terem o mesmo tamanho máximo */
+    .portfolio-item > img {
+      width: 100%;
       max-width: 100%;
       height: auto;
       display: block;
       margin-top: 8px;
+      object-fit: cover;
     }
 
+    /* Correção do grid para o projeto Flip (duas imagens lado a lado) */
     .img-group {
       display: flex;
       gap: 8px;
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .img-group img {
+      width: 50%;
+      flex: 1;
+      min-width: 0; /* Impede que a imagem expanda além do container */
+      height: auto;
+      display: block;
+      object-fit: cover;
     }
 
     /* Rodapé */
@@ -94,7 +113,6 @@
 </head>
 <body>
 
-  <!-- Topo -->
   <div class="top-bar">
     <div style="width: 40px; height: 40px;"></div>
     <div class="hamburger">
@@ -105,7 +123,6 @@
 
   <hr>
 
-  <!-- Biografia & Informações -->
   <div class="bio">
     <p>
       D-G<br/><br/>
@@ -154,7 +171,6 @@
     </p>
   </div>
 
-  <!-- Galeria de Trabalhos -->
   <div class="portfolio-item">
     <img src="assets/v4.gif" alt="V4 Company" />
     <div class="section-title">V4 Company</div>
@@ -175,39 +191,4 @@
     <div class="section-title">João O Pecuário</div>
   </div>
 
-  <div class="portfolio-item">
-    <div class="img-group">
-      <img src="assets/flip1.png" alt="Flip 1" />
-      <img src="assets/flip2.png" alt="Flip 2" />
-    </div>
-    <div class="section-title">Flip!</div>
-  </div>
-
-  <div class="portfolio-item">
-    <img src="assets/bovin.gif" alt="Bovin" />
-    <div class="section-title">Bovin</div>
-  </div>
-
-  <div class="portfolio-item">
-    <img src="assets/apolovecchi.gif" alt="Apolo Vecchi" />
-    <div class="section-title">Apolo Vecchi</div>
-  </div>
-
-  <hr>
-
-  <!-- Rodapé -->
-  <div class="footer">
-    <p>
-      D-G<br/><br/>
-      Writer, copywriter<br/>
-      Brazil<br/>
-      .2002<br/><br/>
-      Contact<br/><br/>
-      @dangasparino_<br/>
-      +55 19 989365-335<br/>
-      danielvecchigasparino@gmail.com
-    </p>
-  </div>
-
-</body>
-</html>
+  <div class="
