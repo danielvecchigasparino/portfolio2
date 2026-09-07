@@ -329,12 +329,151 @@
        ================================================================= -->
   <div id="versao-desktop">
 
-  <style>
+<style>
     #versao-desktop {
       background-color: #FFFFFF;
       color: #000000;
       width: 100%;
     }
+
+    /* Reset interno */
+    #versao-desktop * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+      border: none; 
+      outline: none; 
+    }
+    #versao-desktop a { color: inherit; text-decoration: none; }
+    #versao-desktop ul { list-style: none; }
+    #versao-desktop hr { display: none !important; } /* Garante que nenhuma tag <hr> apareça */
+
+    /* ============ HERO / NAV ============ */
+    #versao-desktop .hero { position: relative; overflow: hidden; background: #FFFFFF; }
+    #versao-desktop .hero-bar { background: #FFFFFF; padding: 10px clamp(20px, 6vw, 47px); display: flex; justify-content: flex-end; }
+    #versao-desktop .hero-nav { display: flex; gap: clamp(10px, 3vw, 28px); color: #000000; font-size: clamp(9px, 2.2vw, 13px); font-family: Arial, sans-serif; }
+    #versao-desktop .hero-title-wrap { padding: clamp(28px, 10vw, 70px) clamp(20px, 6vw, 47px) clamp(24px, 7vw, 50px); text-align: center; }
+    #versao-desktop .name { font-family: 'Marcellus SC', serif; font-size: clamp(26px, 8vw, 80px); color: #000000; line-height: 1.15; }
+    #versao-desktop .subtitle { font-family: 'Marcellus', serif; font-size: clamp(15px, 5vw, 26px); color: #000000; margin-top: .4em; }
+
+    /* ============ CONTENT BLOCKS ============ */
+    #versao-desktop .block { padding: clamp(28px, 9vw, 60px) clamp(20px, 6vw, 47px); background: #FFFFFF; color: #000000; border: none !important; }
+    #versao-desktop .label { font-family: Arial, sans-serif; font-weight: 700; font-size: clamp(9px, 2.3vw, 15px); margin-bottom: 1.1em; color: #000000; }
+    #versao-desktop .body-text { font-family: Arial, sans-serif; font-weight: 400; font-size: clamp(9px, 2.3vw, 15px); line-height: 1.5; max-width: 900px; color: #000000; }
+    #versao-desktop .body-text p { margin-bottom: 1.1em; }
+    #versao-desktop .body-text p:last-child { margin-bottom: 0; }
+
+    #versao-desktop .photo { width: 100%; display: block; }
+    #versao-desktop .photo img { width: 100%; display: block; object-fit: cover; border: none !important; }
+    #versao-desktop .photo.about-photo img { aspect-ratio: 308/183; }
+    #versao-desktop .photo.early-photo img { aspect-ratio: 308/192; }
+
+    /* two-column life section */
+    #versao-desktop .life-grid { display: grid; grid-template-columns: 1fr; gap: clamp(32px, 9vw, 56px); }
+    #versao-desktop .life-col .label { margin-bottom: 1.2em; }
+    #versao-desktop .timeline-row { display: grid; grid-template-columns: 44px 1fr; column-gap: clamp(10px, 3vw, 20px); row-gap: .2em; align-items: baseline; padding: .85em 0; border-bottom: 1px solid rgba(0, 0, 0, .12); font-size: clamp(9px, 2.3vw, 15px); color: #000000; }
+    #versao-desktop .life-col .timeline-row:first-of-type { padding-top: 0; }
+    #versao-desktop .life-col .timeline-row:last-child { border-bottom: none; }
+    #versao-desktop .t-year { font-weight: 700; grid-row: 1 / 3; }
+    #versao-desktop .t-role { line-height: 1.4; }
+    #versao-desktop .t-org { opacity: .5; font-size: .9em; }
+
+    /* ============ PROJECTS GRID (2 COLUNAS SEM BORDAS/LINHAS) ============ */
+    #versao-desktop #projects {
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    #versao-desktop .projects-grid { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 40px 30px; 
+      border: none !important;
+    }
+    
+    #versao-desktop .portfolio-item { 
+      width: 100%; 
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+      background: transparent;
+    }
+
+    #versao-desktop .portfolio-item img { 
+      width: 100%; 
+      max-width: 100%; 
+      aspect-ratio: 16 / 9; 
+      object-fit: cover; 
+      display: block; 
+      border: 0 !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    
+    #versao-desktop .img-group { display: flex; gap: 8px; width: 100%; border: none !important; }
+    #versao-desktop .img-group img { 
+      width: 50%; 
+      flex: 1; 
+      min-width: 0; 
+      aspect-ratio: 1 / 1; 
+      object-fit: cover; 
+      border: 0 !important;
+    }
+    
+    #versao-desktop .section-title { 
+      font-family: 'Marcellus', serif, Arial; 
+      color: #000000; 
+      margin-top: 12px; 
+      font-size: clamp(15px, 2vw, 20px); 
+      border: none !important;
+    }
+
+    /* manifesto + footer */
+    #versao-desktop .manifesto { background: #000000; color: #FFFFFF; padding: clamp(32px, 10vw, 80px) clamp(20px, 6vw, 47px); }
+    #versao-desktop .manifesto .kicker { font-family: 'Marcellus SC', serif; font-size: clamp(11px, 3vw, 17px); margin-bottom: 1.2em; }
+    #versao-desktop .manifesto h2 { font-family: 'Marcellus', serif; font-weight: 400; font-size: clamp(19px, 6vw, 44px); line-height: 1.3; margin-bottom: .7em; }
+    #versao-desktop .manifesto p { font-family: 'Marcellus', serif; font-size: clamp(11px, 3vw, 17px); line-height: 1.55; max-width: 640px; }
+
+    #versao-desktop footer { background: #000000; color: #FFFFFF; padding: clamp(26px, 8vw, 50px) clamp(20px, 6vw, 47px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
+    #versao-desktop footer .foot-name { font-family: 'Marcellus SC', serif; font-size: clamp(15px, 4.5vw, 30px); }
+    #versao-desktop .foot-links { display: flex; gap: 12px; }
+    #versao-desktop .foot-icon { width: clamp(30px, 7vw, 38px); height: clamp(30px, 7vw, 38px); border: 1px solid rgba(255, 255, 255, .4) !important; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Marcellus SC', serif; font-size: clamp(12px, 3vw, 15px); color: #FFFFFF; text-decoration: none; transition: opacity .2s, border-color .2s; }
+    #versao-desktop .foot-icon:hover { opacity: .6; border-color: #FFFFFF !important; }
+
+    /* ============ DESKTOP LAYOUT ============ */
+    @media (min-width: 900px) {
+      #versao-desktop .hero-title-wrap { padding: 60px 60px 40px; }
+      #versao-desktop .name { font-size: clamp(56px, 7vw, 96px); }
+      #versao-desktop .subtitle { font-size: clamp(18px, 2vw, 26px); }
+      #versao-desktop .hero-nav { font-size: 14px; gap: 34px; }
+      #versao-desktop .hero-bar { padding: 22px 60px; }
+
+      #versao-desktop .block { max-width: 1440px; margin: 0 auto; padding: 60px 60px; }
+      #versao-desktop .body-text { font-size: 18px; }
+      #versao-desktop .label { font-size: 16px; }
+
+      #versao-desktop .about-block { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start; }
+      #versao-desktop .about-block .photo { align-self: stretch; }
+      #versao-desktop .about-block .photo img { height: 100%; aspect-ratio: auto; }
+
+      #versao-desktop .early-block { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: start; }
+      #versao-desktop .early-block .photo img { aspect-ratio: auto; height: 100%; }
+
+      #versao-desktop .life-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
+      #versao-desktop .timeline-row { grid-template-columns: 64px 1fr; font-size: 17px; padding: 1.1em 0; }
+
+      #versao-desktop .projects-grid { grid-template-columns: 1fr 1fr; gap: 70px 40px; }
+
+      #versao-desktop .manifesto { padding: 110px 60px; }
+      #versao-desktop .manifesto-inner { max-width: 1440px; margin: 0 auto; }
+      #versao-desktop .manifesto h2 { font-size: 52px; max-width: 820px; }
+      #versao-desktop .manifesto p { font-size: 19px; }
+
+      #versao-desktop footer { padding: 60px; }
+      #versao-desktop .foot-name { font-size: 34px; }
+    }
+  </style>
 
     /* Reset interno */
     #versao-desktop * { box-sizing: border-box; margin: 0; padding: 0; }
