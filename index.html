@@ -473,12 +473,25 @@
       #versao-desktop footer { padding: 60px; }
       #versao-desktop .foot-name { font-size: 34px; }
     }
-  </style>
+
+<style>
+    #versao-desktop {
+      background-color: #FFFFFF;
+      color: #000000;
+      width: 100%;
+    }
 
     /* Reset interno */
-    #versao-desktop * { box-sizing: border-box; margin: 0; padding: 0; }
+    #versao-desktop * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+      border: none; 
+      outline: none; 
+    }
     #versao-desktop a { color: inherit; text-decoration: none; }
     #versao-desktop ul { list-style: none; }
+    #versao-desktop hr { display: none !important; } /* Garante que nenhuma tag <hr> apareça */
 
     /* ============ HERO / NAV ============ */
     #versao-desktop .hero { position: relative; overflow: hidden; background: #FFFFFF; }
@@ -489,53 +502,68 @@
     #versao-desktop .subtitle { font-family: 'Marcellus', serif; font-size: clamp(15px, 5vw, 26px); color: #000000; margin-top: .4em; }
 
     /* ============ CONTENT BLOCKS ============ */
-    #versao-desktop .block { padding: clamp(28px, 9vw, 60px) clamp(20px, 6vw, 47px); background: #FFFFFF; color: #000000; }
+    #versao-desktop .block { padding: clamp(28px, 9vw, 60px) clamp(20px, 6vw, 47px); background: #FFFFFF; color: #000000; border: none !important; }
     #versao-desktop .label { font-family: Arial, sans-serif; font-weight: 700; font-size: clamp(9px, 2.3vw, 15px); margin-bottom: 1.1em; color: #000000; }
     #versao-desktop .body-text { font-family: Arial, sans-serif; font-weight: 400; font-size: clamp(9px, 2.3vw, 15px); line-height: 1.5; max-width: 900px; color: #000000; }
     #versao-desktop .body-text p { margin-bottom: 1.1em; }
     #versao-desktop .body-text p:last-child { margin-bottom: 0; }
 
     #versao-desktop .photo { width: 100%; display: block; }
-    #versao-desktop .photo img { width: 100%; display: block; object-fit: cover; }
+    #versao-desktop .photo img { width: 100%; display: block; object-fit: cover; border: none !important; }
     #versao-desktop .photo.about-photo img { aspect-ratio: 308/183; }
     #versao-desktop .photo.early-photo img { aspect-ratio: 308/192; }
 
     /* two-column life section */
     #versao-desktop .life-grid { display: grid; grid-template-columns: 1fr; gap: clamp(32px, 9vw, 56px); }
     #versao-desktop .life-col .label { margin-bottom: 1.2em; }
-    #versao-desktop .timeline-row { display: grid; grid-template-columns: 44px 1fr; column-gap: clamp(10px, 3vw, 20px); row-gap: .2em; align-items: baseline; padding: .85em 0; border-bottom: none; font-size: clamp(9px, 2.3vw, 15px); color: #000000; }
+    #versao-desktop .timeline-row { display: grid; grid-template-columns: 44px 1fr; column-gap: clamp(10px, 3vw, 20px); row-gap: .2em; align-items: baseline; padding: .85em 0; border-bottom: 1px solid rgba(0, 0, 0, .12); font-size: clamp(9px, 2.3vw, 15px); color: #000000; }
     #versao-desktop .life-col .timeline-row:first-of-type { padding-top: 0; }
     #versao-desktop .life-col .timeline-row:last-child { border-bottom: none; }
     #versao-desktop .t-year { font-weight: 700; grid-row: 1 / 3; }
     #versao-desktop .t-role { line-height: 1.4; }
     #versao-desktop .t-org { opacity: .5; font-size: .9em; }
 
-    /* ============ PROJECTS GRID ============ */
-    /* ============ PROJECTS GRID (2 COLUNAS) ============ */
+    /* ============ PROJECTS GRID (2 COLUNAS SEM BORDAS/LINHAS) ============ */
+    #versao-desktop #projects {
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
     #versao-desktop .projects-grid { 
       display: grid; 
       grid-template-columns: 1fr 1fr; 
       gap: 40px 30px; 
+      border: none !important;
     }
     
-    #versao-desktop .portfolio-item { width: 100%; }
-    #versao-desktop .portfolio-item > img { 
+    #versao-desktop .portfolio-item { 
       width: 100%; 
-      border: none !important; 
+      border: none !important;
+      outline: none !important;
       box-shadow: none !important;
+      background: transparent;
+    }
+
+    #versao-desktop .portfolio-item img { 
+      width: 100%; 
       max-width: 100%; 
       aspect-ratio: 16 / 9; 
       object-fit: cover; 
       display: block; 
+      border: 0 !important;
+      outline: none !important;
+      box-shadow: none !important;
     }
     
-    #versao-desktop .img-group { display: flex; gap: 8px; width: 100%; }
+    #versao-desktop .img-group { display: flex; gap: 8px; width: 100%; border: none !important; }
     #versao-desktop .img-group img { 
       width: 50%; 
       flex: 1; 
       min-width: 0; 
       aspect-ratio: 1 / 1; 
       object-fit: cover; 
+      border: 0 !important;
     }
     
     #versao-desktop .section-title { 
@@ -543,6 +571,7 @@
       color: #000000; 
       margin-top: 12px; 
       font-size: clamp(15px, 2vw, 20px); 
+      border: none !important;
     }
 
     /* manifesto + footer */
@@ -554,8 +583,8 @@
     #versao-desktop footer { background: #000000; color: #FFFFFF; padding: clamp(26px, 8vw, 50px) clamp(20px, 6vw, 47px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px; }
     #versao-desktop footer .foot-name { font-family: 'Marcellus SC', serif; font-size: clamp(15px, 4.5vw, 30px); }
     #versao-desktop .foot-links { display: flex; gap: 12px; }
-    #versao-desktop .foot-icon { width: clamp(30px, 7vw, 38px); height: clamp(30px, 7vw, 38px); border: 1px solid rgba(255, 255, 255, .4); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Marcellus SC', serif; font-size: clamp(12px, 3vw, 15px); color: #FFFFFF; text-decoration: none; transition: opacity .2s, border-color .2s; }
-    #versao-desktop .foot-icon:hover { opacity: .6; border-color: #FFFFFF; }
+    #versao-desktop .foot-icon { width: clamp(30px, 7vw, 38px); height: clamp(30px, 7vw, 38px); border: 1px solid rgba(255, 255, 255, .4) !important; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Marcellus SC', serif; font-size: clamp(12px, 3vw, 15px); color: #FFFFFF; text-decoration: none; transition: opacity .2s, border-color .2s; }
+    #versao-desktop .foot-icon:hover { opacity: .6; border-color: #FFFFFF !important; }
 
     /* ============ DESKTOP LAYOUT ============ */
     @media (min-width: 900px) {
@@ -589,7 +618,7 @@
       #versao-desktop footer { padding: 60px; }
       #versao-desktop .foot-name { font-size: 34px; }
     }
-  </style>
+  </style>  
 
   <div class="hero">
     <div class="hero-bar">
