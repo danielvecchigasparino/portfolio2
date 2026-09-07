@@ -1,16 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head> 
+<html lang="pt-BR">
+<head>
   <meta charset="UTF-8">
+  <!-- Garante que a tela do celular renderize na escala correta sem zoom indesejado -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniel Gasparino — Writer, Copywriter</title>
-  <link rel="icon" type="image/png" href="favicon.svg"> 
-  
-  <!-- Fontes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&display=swap" rel="stylesheet">
-  
+  <title>D-G | Portfolio</title>
   <style>
     * {
       box-sizing: border-box;
@@ -19,384 +13,151 @@
     }
 
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 11px; /* Ajustado para melhor leitura no celular */
+      line-height: 1.5;
+      padding: 16px;
       width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden; /* Evita rolagem horizontal acidental */
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    /* Linhas divisórias */
+    hr {
+      border: none;
+      border-top: 1.5px solid white;
+      margin: 20px 0;
     }
 
-    /* ============ HEADER / NAVIGATION ============ */
-    .header {
-      background-color: #000;
-      padding: 20px clamp(20px, 6vw, 47px);
+    /* Menu / Ícones de topo */
+    .top-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      margin-bottom: 20px;
     }
 
-    .nav-desktop {
-      display: flex;
-      gap: clamp(15px, 3vw, 28px);
-      font-size: clamp(11px, 2.2vw, 13px);
-    }
-
-    .nav-desktop a:hover {
-      opacity: 0.7;
-    }
-
-    /* Menu Hambúrguer (Mobile) */
-    .menu-toggle {
-      width: 30px;
-      height: 18px;
+    .hamburger {
+      width: 36px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-      z-index: 101;
+      gap: 4px;
     }
 
-    .menu-toggle span {
-      display: block;
+    .hamburger div {
       height: 2px;
+      background-color: white;
       width: 100%;
-      background-color: #fff;
-      transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
-    /* Tela cheia quando o menu está ativo */
-    .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: #000;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-      z-index: 99;
+    /* Seção de Texto Principal */
+    .bio p {
+      margin-bottom: 16px;
     }
 
-    .menu-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .menu-overlay a {
-      font-family: 'Marcellus', serif;
-      font-size: 24px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    /* ============ HERO SECTION ============ */
-    .hero-title-wrap {
-      padding: clamp(40px, 10vw, 80px) clamp(20px, 6vw, 47px);
-      text-align: center;
-    }
-
-    .name {
-      font-family: 'Marcellus SC', serif;
-      font-size: clamp(28px, 8vw, 80px);
-      line-height: 1.15;
-    }
-
-    .subtitle {
-      font-family: 'Marcellus', serif;
-      font-size: clamp(15px, 5vw, 26px);
-      margin-top: 0.4em;
-      opacity: 0.8;
-    }
-
-    /* ============ CONTENT BLOCKS ============ */
-    .block {
-      padding: clamp(28px, 9vw, 60px) clamp(20px, 6vw, 47px);
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-
-    .label {
+    .bio strong {
       font-weight: 700;
-      font-size: clamp(12px, 2.3vw, 16px);
-      margin-bottom: 1.1em;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
     }
 
-    .body-text {
-      font-size: clamp(13px, 2.3vw, 18px);
-      line-height: 1.6;
-      max-width: 900px;
+    .section-title {
+      font-family: 'Marcellus', serif, Arial;
+      text-decoration: underline;
+      margin-top: 24px;
+      margin-bottom: 8px;
     }
 
-    .body-text p {
-      margin-bottom: 1.1em;
+    /* Imagens e Portfólio */
+    .portfolio-item {
+      margin-bottom: 30px;
     }
 
-    .photo img {
-      width: 100%;
+    img {
+      max-width: 100%;
       height: auto;
       display: block;
-      object-fit: cover;
+      margin-top: 8px;
     }
 
-    /* Alignments */
-    .about-block, .early-block {
+    .img-group {
       display: flex;
-      flex-direction: column;
-      gap: 30px;
+      gap: 8px;
     }
 
-    /* Timeline Section */
-    .life-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: clamp(32px, 9vw, 56px);
-    }
-
-    .timeline-row {
-      display: grid;
-      grid-template-columns: 50px 1fr;
-      column-gap: 15px;
-      align-items: baseline;
-      padding: 0.85em 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      font-size: clamp(12px, 2.3vw, 16px);
-    }
-
-    .t-year {
-      font-weight: 700;
-    }
-
-    .t-org {
-      opacity: 0.6;
-      font-size: 0.9em;
-    }
-
-    /* ============ PROJECTS GRID ============ */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: clamp(32px, 9vw, 60px);
-    }
-
-    .project-card {
-      display: block;
-    }
-
-    .project-cover {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: #1a1a1a;
-      border: 1px dashed #444;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #8a8a8a;
-      font-size: clamp(10px, 2vw, 13px);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      text-align: center;
-      padding: 1em;
-    }
-
-    img.project-cover {
-      border: none;
-      padding: 0;
-      object-fit: cover;
-    }
-
-    .project-caption {
-      margin-top: 0.9em;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1em;
-    }
-
-    .project-name {
-      font-family: 'Marcellus SC', serif;
-      font-size: clamp(16px, 4vw, 22px);
-    }
-
-    .project-cat {
-      font-size: clamp(10px, 2.2vw, 13px);
-      opacity: 0.6;
-      white-space: nowrap;
-    }
-
-    /* ============ MANIFESTO SECTION ============ */
-    .manifesto {
-      background: #111;
-      padding: clamp(40px, 10vw, 80px) clamp(20px, 6vw, 47px);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .manifesto-inner {
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-
-    .manifesto .kicker {
-      font-family: 'Marcellus SC', serif;
-      font-size: clamp(12px, 3vw, 17px);
-      margin-bottom: 1.2em;
-      letter-spacing: 1px;
-    }
-
-    .manifesto h2 {
-      font-family: 'Marcellus', serif;
-      font-weight: 400;
-      font-size: clamp(22px, 6vw, 48px);
-      line-height: 1.3;
-      margin-bottom: 0.7em;
-    }
-
-    /* ============ FOOTER ============ */
-    footer {
-      padding: clamp(30px, 8vw, 60px) clamp(20px, 6vw, 47px);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-
-    footer .foot-name {
-      font-family: 'Marcellus SC', serif;
-      font-size: clamp(18px, 4.5vw, 30px);
-    }
-
-    .foot-links {
-      display: flex;
-      gap: 12px;
-    }
-
-    .foot-icon {
-      width: clamp(34px, 7vw, 40px);
-      height: clamp(34px, 7vw, 40px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.2s, border-color 0.2s;
-    }
-
-    .foot-icon:hover {
-      opacity: 0.6;
-      border-color: #fff;
-    }
-
-    /* ============ MEDIA QUERIES (DESKTOP) ============ */
-    @media (min-width: 900px) {
-      .about-block {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: start;
-      }
-
-      .early-block {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: start;
-      }
-
-      .life-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 60px 40px;
-      }
+    /* Rodapé */
+    .footer {
+      text-align: right;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header sticky com navegação e botão hambúrguer -->
-  <header class="header">
-    <nav class="nav-desktop">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="personal-manifesto-on-the-future-of-copywriting-and-ai-writing.html">Manifesto</a>
-    </nav>
-    
-    <div class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
-      <span></span>
-      <span></span>
+  <!-- Topo -->
+  <div class="top-bar">
+    <div style="width: 40px; height: 40px;"></div>
+    <div class="hamburger">
+      <div></div>
+      <div></div>
     </div>
-  </header>
-
-  <!-- Menu overlay de tela cheia para navegação mobile/interativa -->
-  <div class="menu-overlay" id="menuOverlay">
-    <a href="#about" class="overlay-link">About</a>
-    <a href="#projects" class="overlay-link">Projects</a>
-    <a href="#contact" class="overlay-link">Contact</a>
-    <a href="personal-manifesto-on-the-future-of-copywriting-and-ai-writing.html" class="overlay-link" style="text-decoration: underline;">Manifesto</a>
   </div>
 
-  <!-- Hero Section -->
-  <section class="hero-title-wrap">
-    <h1 class="name">DANIEL GASPARINO</h1>
-    <p class="subtitle">Writer, copywriter</p>
-  </section>
+  <hr>
 
-  <!-- About Section -->
-  <section class="block about-block" id="about">
-    <div>
-      <div class="label">About</div>
-      <div class="body-text">
-        <p>Writer since 2017, Copywriter since 2021.</p>
-        <p>Every single company I worked with has benefited from a primary skill of mine: my ability to deep learning and deep work.</p>
-        <p>Alongside with those skills, as a self-taught student, I explored multiple topics to enhance value on a professional standpoint: marketing, entrepreneurship, business, branding, positioning, statistics, data and analytics&hellip;</p>
-        <p>&hellip;and also on a personal standpoint: philosophy, literature, psychology, economics, history and religion.</p>
-      </div>
-    </div>
-    <div class="photo about-photo">
-      <img src="assets/indaiatuba.jpg" alt="Indaiatuba, São Paulo">
-    </div>
-  </section>
+  <!-- Biografia & Informações -->
+  <div class="bio">
+    <p>
+      D-G<br/><br/>
+      Writer, copywriter<br/>
+      Brazil<br/>
+      .2002
+    </p>
 
-  <!-- Early Life Section -->
-  <section class="block early-block" id="early-life">
-    <div class="photo early-photo">
-      <img src="assets/childhood.jpg" alt="Daniel as a kid, with friends">
-    </div>
-    <div>
-      <div class="label">Early Life</div>
-      <div class="body-text">
-        <p>I was born on March 14th, 2002, in Indaiatuba, São Paulo, Brazil. Always encouraged by my parents to pursue education so that I could provide for myself in a way that they couldn&rsquo;t.</p>
-        <p>At 15, I remember writing my first essay for a Portuguese class and immediately became captivated by it.</p>
-        <p>In those years I used writing as a way to express myself, and later on as a way to earn my first financial income.</p>
-      </div>
-    </div>
-  </section>
+    <p>
+      Working on<br/><br/>
+      Marketing<br/>
+      Creative Strategy<br/>
+      Management<br/>
+      Data & Analytics<br/>
+      Branding
+    </p>
 
-  <!-- Projects Section -->
-  <section class="block" id="projects">
+    <p>
+      <strong>Professional Life</strong><br/><br/>
+      <strong>2026 - Marketing Coordinator</strong><br/>
+      Mazix (Agro Ibex)<br/>
+      <strong>2025 - Copywriter</strong><br/>
+      V4 Company<br/>
+      <strong>2024 - Copywriter</strong><br/>
+      Birdclick<br/>
+      <strong>2021 - Intern and Copywriter Jr.</strong><br/>
+      Bussolla
+    </p>
+
+    <p>
+      <strong>About</strong><br/>
+      Writer since 2017, Copywriter since 2021.
+      Every single company I worked with has benefited from a primary skill of mine: my ability to deep learning and deep work. Alongside with those skills, as a self-taught student, I explored multiple topics to enhance value on a professional standpoint: marketing, entrepreneurship, business, branding, positioning, statistics, data and analytics and also on a personal standpoint: philosophy, literature, psychology, economics, history and religion.
+    </p>
+
+    <p>
+      <strong>Early life</strong><br/>
+      I was born on March 14th, 2002, in Indaiatuba, São Paulo, Brazil. Always encouraged by my parents to pursue education so that I could provide for myself in a way that they couldn’t. At 15, I remember writing my first essay for a Portuguese class and immediately became captivated by it. In those years I used writing as a way to express myself, and later on as a way to earn my first financial income.
+    </p>
+
+    <p>
+      <strong>Contact</strong><br/>
+      @dangasparino_<br/>
+      +55 19 98936‑5335<br/>
+      danielvecchigasparino@gmail.com
+    </p>
+  </div>
+
+  <img src="https://placehold.co/119x74" alt="Placeholder" />
+
+  <!-- Galeria de Trabalhos -->
+ <section class="block" id="projects">
     <div class="label">Projects</div>
     <div class="projects-grid">
       
@@ -468,116 +229,19 @@
     </div>
   </section>
 
-  <!-- Timeline / Academic & Professional -->
-  <section class="block">
-    <div class="life-grid">
-      <div class="life-col">
-        <div class="label">Academic Life</div>
-        <div class="timeline-row">
-          <span class="t-year">2024</span>
-          <div>
-            <div class="t-role">Associate&rsquo;s degree</div>
-            <div class="t-org">UniMAX</div>
-          </div>
-        </div>
-        <div class="timeline-row">
-          <span class="t-year">2020</span>
-          <div>
-            <div class="t-role">Bachelor&rsquo;s degree in Language and Literature</div>
-            <div class="t-org">FFLCH-USP</div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="life-col">
-        <div class="label">Professional Life</div>
-        <div class="timeline-row">
-          <span class="t-year">2026</span>
-          <div>
-            <div class="t-role">Marketing Coordinator</div>
-            <div class="t-org">Mazix (Agro Ibex)</div>
-          </div>
-        </div>
-        <div class="timeline-row">
-          <span class="t-year">2025</span>
-          <div>
-            <div class="t-role">Copywriter</div>
-            <div class="t-org">V4 Company</div>
-          </div>
-        </div>
-        <div class="timeline-row">
-          <span class="t-year">2024</span>
-          <div>
-            <div class="t-role">Copywriter</div>
-            <div class="t-org">Birdclick</div>
-          </div>
-        </div>
-        <div class="timeline-row">
-          <span class="t-year">2021</span>
-          <div>
-            <div class="t-role">Intern and Copywriter Jr.</div>
-            <div class="t-org">Bussolla</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="block" id="contact">
-    <div class="label">Contact</div>
-    <div class="body-text">
-      <p>@dangasparino_<br>+55 19 98936&#8209;5335<br>danielvecchigasparino@gmail.com</p>
-    </div>
-  </section>
-
-  <!-- Manifesto Banner Section -->
-  <section class="manifesto">
-    <div class="manifesto-inner">
-      <div class="kicker">MANIFESTO</div>
-      <h2>Personal Manifesto on the Future<br>of Copywriting and AI Writing</h2>
-      <p style="margin-top:1.5em;">
-        <a href="personal-manifesto-on-the-future-of-copywriting-and-ai-writing.html" style="text-decoration:underline;">Read the full manifesto &rarr;</a>
-      </p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="foot-name">DANIEL GASPARINO</div>
-    <div class="foot-links">
-      <a class="foot-icon" href="https://www.instagram.com/dangasparino_/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 100 100" width="55%" height="55%"><rect x="10" y="10" width="80" height="80" rx="22" ry="22" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="8"/><circle cx="74" cy="26" r="6" fill="currentColor"/></svg>
-      </a>
-      <a class="foot-icon" href="https://www.linkedin.com/in/dangasparino/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg viewBox="0 0 100 100" width="55%" height="55%"><circle cx="21" cy="18" r="10" fill="currentColor"/><rect x="13" y="35" width="16" height="50" fill="currentColor"/><path d="M45,85 V35 H61 V43 C66,36 74,33 82,33 C92,33 98,40 98,52 V85 H82 V56 C82,49 79,45 73,45 C67,45 63,49 63,56 V85 Z" fill="currentColor"/></svg>
-      </a>
-      <a class="foot-icon" href="https://medium.com/@daniel-gasparino" target="_blank" rel="noopener" aria-label="Medium">
-        <svg viewBox="0 0 100 100" width="60%" height="60%"><ellipse cx="30" cy="50" rx="24" ry="24" fill="currentColor"/><ellipse cx="68" cy="50" rx="11" ry="21" fill="currentColor"/><ellipse cx="90" cy="50" rx="4" ry="19" fill="currentColor"/></svg>
-      </a>
-      <a class="foot-icon" href="https://minervapalace.substack.com/" target="_blank" rel="noopener" aria-label="Substack">
-        <svg viewBox="0 0 100 100" width="55%" height="55%"><path d="M20,12 L80,12 L80,92 L50,72 L20,92 Z" fill="currentColor"/><rect x="20" y="30" width="60" height="10" fill="#000"/><rect x="20" y="48" width="60" height="10" fill="#000"/></svg>
-      </a>
-    </div>
-  </footer>
-
-  <!-- Script de Interação para o Menu -->
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const menuOverlay = document.getElementById('menuOverlay');
-    const overlayLinks = document.querySelectorAll('.overlay-link');
-
-    menuToggle.addEventListener('click', () => {
-      menuOverlay.classList.toggle('active');
-    });
-
-    // Fecha o menu overlay após clicar em um link interno
-    overlayLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        menuOverlay.classList.remove('active');
-      });
-    });
-  </script>
+  <!-- Rodapé -->
+  <div class="footer">
+    <p>
+      D-G<br/><br/>
+      Writer, copywriter<br/>
+      Brazil<br/>
+      .2002<br/><br/>
+      Contact<br/><br/>
+      @dangasparino_<br/>
+      +55 19 989365-335<br/>
+      danielvecchigasparino@gmail.com
+    </p>
+  </div>
 
 </body>
 </html>
