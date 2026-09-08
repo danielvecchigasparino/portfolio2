@@ -14,11 +14,28 @@
       padding: 0;
     }
 
-    /* Regra de Alternância (Mobile vs Desktop) */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Alternância (Mobile vs Desktop) */
     #versao-desktop { display: none !important; }
     #versao-mobile  { display: block !important; }
 
+    /* Fundo preto nativo do body quando estiver em telas pequenas */
+    @media (max-width: 899px) {
+      body {
+        background-color: #000000;
+      }
+    }
+
     @media (min-width: 900px) {
+      body {
+        background-color: #ffffff;
+      }
       #versao-mobile  { display: none !important; }
       #versao-desktop { display: block !important; }
     }
@@ -26,11 +43,14 @@
 </head>
 <body>
 
+  <!-- =================================================================
+       BLOCO 1: MOBILE
+       ================================================================= -->
   <div id="versao-mobile">
     <style>
       #versao-mobile {
-        background-color: black;
-        color: white;
+        background-color: #000000;
+        color: #ffffff;
         font-family: Arial, sans-serif;
         font-size: 11px;
         line-height: 1.5;
@@ -243,6 +263,9 @@
     </div>
   </div>
 
+  <!-- =================================================================
+       BLOCO 2: DESKTOP
+       ================================================================= -->
   <div id="versao-desktop">
     <style>
       #versao-desktop {
