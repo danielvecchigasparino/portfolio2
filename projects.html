@@ -43,11 +43,12 @@
   .project-subprojects{font-size:clamp(13px,2.4vw,18px);line-height:1.5;opacity:.9;}
   .project-role{font-size:clamp(13px,2.4vw,18px);line-height:1.5;opacity:.75;}
   .project-see-more{display:inline-block;font-weight:700;border-bottom:1px solid currentColor;padding-bottom:1px;font-size:clamp(13px,2.4vw,18px);width:fit-content;}
-  .project-visual{position:relative;width:100%;aspect-ratio:16/9;display:flex;align-items:flex-end;justify-content:flex-end;overflow:hidden;}
+  .project-visual{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;}
   .project-visual img{width:100%;height:100%;object-fit:cover;display:block;}
-  .project-visual .visual-label{position:relative;z-index:2;font-family:Arial;font-weight:700;font-size:clamp(14px,2.6vw,20px);padding:clamp(10px,2vw,18px);}
   .project-visual.no-color{background:#000;border:1px dashed rgba(255,255,255,.25);}
-  .project-visual.placeholder-mark{color:rgba(255,255,255,.4);font-size:clamp(10px,2vw,13px);letter-spacing:.05em;text-transform:uppercase;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;}
+  .project-visual .placeholder-mark{color:rgba(255,255,255,.4);font-size:clamp(10px,2vw,13px);letter-spacing:.05em;text-transform:uppercase;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);}
+  .project-visual-col{width:100%;}
+  .visual-label{display:block;text-align:center;font-family:Arial;font-weight:700;font-size:clamp(14px,2.6vw,20px);margin-top:clamp(12px,2.5vw,20px);}
 
   .row-v4 .project-visual{background:#F60000;}
   .row-pet .project-visual{background:#0A70EB;}
@@ -71,7 +72,8 @@
     .page-intro{padding:44px 60px;font-size:20px;}
     .project-row-inner{flex-direction:row;align-items:center;justify-content:space-between;padding:60px;gap:60px;}
     .project-row-text{flex:0 0 42%;display:flex;flex-direction:column;gap:16px;}
-    .project-visual{flex:0 0 48%;aspect-ratio:16/10;}
+    .project-visual-col{flex:0 0 48%;}
+    .project-visual{aspect-ratio:16/10;}
     .footer-grid{grid-template-columns:1fr 1fr;}
     footer{padding:60px;}
     .foot-name{font-size:34px;}
@@ -123,8 +125,10 @@
       <div class="project-role">Copywriter for V4 Company USA</div>
       <span class="project-see-more">See more...</span>
     </div>
-    <div class="project-visual">
-      <img src="assets/v4projetos.png" alt="V4 Company">
+    <div class="project-visual-col">
+      <div class="project-visual">
+        <img src="assets/v4projetos.png" alt="V4 Company">
+      </div>
       <span class="visual-label">V4 Company</span>
     </div>
   </div>
@@ -137,8 +141,10 @@
       <div class="project-role">Marketing Manager for Mazix (Agro Ibex)</div>
       <span class="project-see-more">See more...</span>
     </div>
-    <div class="project-visual">
-      <img src="assets/pecuarioprojetos.png" alt="Jo&atilde;o O Pecu&aacute;rio">
+    <div class="project-visual-col">
+      <div class="project-visual">
+        <img src="assets/pecuarioprojetos.png" alt="Jo&atilde;o O Pecu&aacute;rio">
+      </div>
       <span class="visual-label">Agro Ibex</span>
     </div>
   </div>
@@ -151,8 +157,10 @@
       
       <span class="project-see-more">See more...</span>
     </div>
-    <div class="project-visual">
-      <img src="assets/petpetprojetos.png" alt="Pet &amp; Pet">
+    <div class="project-visual-col">
+      <div class="project-visual">
+        <img src="assets/petpetprojetos.png" alt="Pet &amp; Pet">
+      </div>
       <span class="visual-label">Pet &amp; Pet</span>
     </div>
   </div>
@@ -165,8 +173,10 @@
       
       <span class="project-see-more">See more...</span>
     </div>
-    <div class="project-visual">
-      <img src="assets/flipprojetos.png" alt="Flip!">
+    <div class="project-visual-col">
+      <div class="project-visual">
+        <img src="assets/flipprojetos.png" alt="Flip!">
+      </div>
       <span class="visual-label">Flip!</span>
     </div>
   </div>
@@ -179,8 +189,10 @@
       
       <span class="project-see-more">See more...</span>
     </div>
-    <div class="project-visual">
-      <img src="assets/fiemglabprojetos.png" alt="FIEMG Lab">
+    <div class="project-visual-col">
+      <div class="project-visual">
+        <img src="assets/fiemglabprojetos.png" alt="FIEMG Lab">
+      </div>
       <span class="visual-label">FIEMG Lab</span>
     </div>
   </div>
@@ -193,8 +205,10 @@
       
       <span class="project-see-more">See more...</span>
     </div>
-    <div class="project-visual">
-      <img src="assets/apolovecchiprojetos.png" alt="Apolo Vecchi">
+    <div class="project-visual-col">
+      <div class="project-visual">
+        <img src="assets/apolovecchiprojetos.png" alt="Apolo Vecchi">
+      </div>
       <span class="visual-label">Apolo Vecchi</span>
     </div>
   </div>
@@ -207,8 +221,10 @@
       
       <span class="project-see-more">See more...</span>
     </div>
-    <div class="project-visual">
-      <img src="assets/minervapalaceprojetos.png" alt="Minerva Palace">
+    <div class="project-visual-col">
+      <div class="project-visual">
+        <img src="assets/minervapalaceprojetos.png" alt="Minerva Palace">
+      </div>
       <span class="visual-label">Minerva Palace</span>
     </div>
   </div>
