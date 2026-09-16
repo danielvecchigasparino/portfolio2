@@ -16,8 +16,8 @@
 
   /* ============ TOP BAR (same as project pages) ============ */
   .proj-bar{position:sticky;top:0;z-index:50;background:#000;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:clamp(14px,3.5vw,22px) clamp(20px,6vw,47px);border-bottom:1px solid rgba(255,255,255,.15);}
-  .proj-logo{font-family:'Marcellus SC',serif;font-size:clamp(13px,3.2vw,17px);display:flex;align-items:center;gap:.6em;}
-  .proj-logo svg{width:22px;height:22px;flex-shrink:0;}
+  .proj-bar-spacer{width:26px;height:18px;}
+  .desktop-nav{display:none;}
   .menu-toggle{background:none;border:none;cursor:pointer;width:26px;height:18px;position:relative;padding:0;}
   .menu-toggle span{position:absolute;left:0;width:100%;height:2px;background:#fff;transition:transform .25s ease,opacity .25s ease,top .25s ease;}
   .menu-toggle span:first-child{top:0;}
@@ -68,7 +68,10 @@
 
   /* ============ DESKTOP ============ */
   @media (min-width:900px){
-    .proj-bar{padding:22px 60px;}
+    .proj-bar{padding:22px 60px;justify-content:flex-end;}
+    .proj-bar-spacer{display:none;}
+    .desktop-nav{display:flex;gap:clamp(10px,3vw,28px);color:#fff;font-size:14px;font-family:Arial,sans-serif;}
+    .menu-toggle{display:none;}
     .page-intro{padding:44px 60px;font-size:20px;}
     .project-row-inner{flex-direction:row;align-items:center;justify-content:space-between;padding:60px;gap:60px;}
     .project-row-text{flex:0 0 42%;display:flex;flex-direction:column;gap:16px;}
@@ -83,20 +86,12 @@
 <body>
 
 <header class="proj-bar">
-  <a class="proj-logo" href="index.html">
-    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(16,16) scale(0.8) translate(-16,-16)">
-        <rect x="13" y="2" width="6" height="4" rx="1" fill="#f2749b"/>
-        <rect x="13" y="6" width="6" height="2.5" fill="#d9d9d9"/>
-        <rect x="13" y="8.5" width="6" height="15" fill="#ffcc4d"/>
-        <rect x="13" y="8.5" width="1.5" height="15" fill="#f2b100" opacity="0.6"/>
-        <polygon points="13,23.5 19,23.5 16,28" fill="#e6b273"/>
-        <polygon points="14.6,26.6 17.4,26.6 16,29.5" fill="#664500"/>
-        <polygon points="15.3,28 16.7,28 16,29.5" fill="#2b2b2b"/>
-      </g>
-    </svg>
-    DANIEL GASPARINO
-  </a>
+  <div class="proj-bar-spacer"></div>
+  <nav class="desktop-nav">
+    <a href="index.html#about">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="personal-manifesto-on-the-future-of-copywriting-and-ai-writing.html">Manifesto</a>
+  </nav>
   <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
     <span></span><span></span>
   </button>
