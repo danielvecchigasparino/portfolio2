@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Daniel Gasparino | Portfolio</title>
-  <link rel="icon" type="image/png" href="favicon.svg"> 
+  <link rel="icon" type="image/png" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&display=swap" rel="stylesheet">
   
   <style>
     /* Reset Global */
@@ -91,12 +94,65 @@
         display: flex;
         flex-direction: column;
         gap: 4px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        position: relative;
       }
 
       #versao-mobile .hamburger div {
         height: 2px;
         background-color: white;
         width: 100%;
+        transition: transform .25s ease, opacity .25s ease;
+      }
+
+      #versao-mobile .hamburger.open div:first-child {
+        transform: translateY(3px) rotate(45deg);
+      }
+
+      #versao-mobile .hamburger.open div:last-child {
+        transform: translateY(-3px) rotate(-45deg);
+      }
+
+      #mobile-menu-overlay {
+        position: fixed;
+        inset: 0;
+        background: #000000;
+        color: #ffffff;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s ease;
+      }
+
+      #mobile-menu-overlay.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      #mobile-menu-overlay ul {
+        list-style: none;
+        text-align: center;
+      }
+
+      #mobile-menu-overlay li {
+        margin: 22px 0;
+      }
+
+      #mobile-menu-overlay a {
+        font-family: 'Marcellus SC', serif;
+        font-size: clamp(28px, 9vw, 40px);
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      #mobile-menu-overlay a:hover {
+        opacity: .6;
       }
 
       #versao-mobile .bio p {
@@ -153,11 +209,19 @@
 
     <div class="top-bar">
       <div style="width: 40px; height: 40px;"></div>
-      <div class="hamburger">
+      <button class="hamburger" id="mobileMenuToggle" aria-label="Abrir menu">
         <div></div>
         <div></div>
-      </div>
+      </button>
     </div>
+
+    <nav id="mobile-menu-overlay">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="personal-manifesto-on-the-future-of-copywriting-and-ai-writing.html">Manifesto</a></li>
+      </ul>
+    </nav>
 
     <hr>
 
@@ -578,6 +642,21 @@
     </footer>
 
   </div>
+
+  <script>
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    if (mobileMenuToggle && mobileMenuOverlay) {
+      mobileMenuToggle.addEventListener('click', () => {
+        mobileMenuToggle.classList.toggle('open');
+        mobileMenuOverlay.classList.toggle('open');
+      });
+      mobileMenuOverlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        mobileMenuToggle.classList.remove('open');
+        mobileMenuOverlay.classList.remove('open');
+      }));
+    }
+  </script>
 
 </body>
 </html>
