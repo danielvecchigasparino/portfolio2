@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pet & Pet — planejamento estratégico de marketing</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;700&family=Caveat:wght@600&display=swap">
+<style>
+:root{--bg:#fafafa;--fg:#0a0a0a;--mute:#5c5c5c;--line:#d9d9d9;--acc:#e10600;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0a0a0a;--fg:#fafafa;--mute:#a3a3a3;--line:#333;--acc:#ff4b43}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0a0a0a;--fg:#fafafa;--mute:#a3a3a3;--line:#333;--acc:#ff4b43}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:400 clamp(17px,1.6vw,21px)/1.5 "Instrument Sans","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+section{min-height:100vh;padding:clamp(36px,7vw,96px) clamp(24px,7vw,110px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+section.hoje{background:var(--bg)}
+section.pode{background:#000;color:#fafafa;--fg:#fafafa;--mute:#b5b5b5;--line:#333;--acc:#ff4b43}
+h1,h2{font-weight:400;letter-spacing:-.035em;line-height:1}
+h1{font-size:clamp(46px,8.6vw,132px)}
+h2{font-size:clamp(34px,5.6vw,84px);max-width:15em}
+b{font-weight:700}
+.sub{margin-top:28px;font-size:clamp(17px,1.8vw,24px);color:var(--mute)}
+.red{color:var(--acc)}
+.pill{display:inline-block;border:2px solid var(--fg);border-radius:999px;padding:.3em 1em;font:inherit;color:inherit;background:none;font-size:clamp(16px,1.7vw,22px);cursor:pointer;transition:background .2s,color .2s}
+.pill[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.pill:focus-visible{outline:3px solid var(--acc);outline-offset:4px}
+.mark{font-family:"Caveat","Segoe Print",cursive;font-weight:600}
+.state{max-width:20em;font-size:clamp(28px,4.4vw,64px);letter-spacing:-.03em;line-height:1.08}
+.tag{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));background:#e10600;color:#fff;font-size:13px;padding:6px 12px;border-radius:999px;z-index:5}
+/* desenho */
+.draw{width:100%;max-width:860px;margin-top:36px}
+.draw svg{width:100%;height:auto;display:block;overflow:visible}
+.draw text{fill:var(--fg)}
+.draw .ln{fill:none;stroke:var(--fg);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.dotc{fill:var(--bg);stroke:var(--fg);stroke-width:4;transition:fill .25s,r .25s}
+.dotc.on{fill:var(--acc);stroke:var(--acc)}
+.brands{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.panel{margin-top:22px;max-width:36em;min-height:6.2em;font-size:clamp(18px,2vw,26px);letter-spacing:-.015em;line-height:1.3}
+/* ranking */
+ol{list-style:none;margin-top:44px;padding:0;border-top:2px solid var(--fg);max-width:980px}
+li.rk{display:flex;gap:clamp(16px,4vw,48px);align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+li.rk .n{font-size:clamp(40px,6vw,84px);font-weight:700;letter-spacing:-.05em;line-height:1;min-width:1.2em}
+li.rk strong{display:block;font-size:clamp(22px,3vw,40px);letter-spacing:-.03em;line-height:1.1}
+li.rk span{color:var(--mute)}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,64px);margin-top:44px;max-width:1000px}
+.steps div{border-top:2px solid var(--fg);padding-top:14px;font-size:clamp(18px,2vw,26px);letter-spacing:-.015em;line-height:1.3}
+.steps b{display:block;font-size:clamp(28px,4vw,52px);letter-spacing:-.04em;margin-bottom:6px}
+.cover{padding:0}.cover .top{flex:1;padding:clamp(36px,7vw,96px) clamp(24px,7vw,110px);display:flex;flex-direction:column;justify-content:flex-end;border-bottom:1px solid var(--line)}.cover .bot{flex:1;background:#000;color:#fafafa;--fg:#fafafa;--bg:#000;padding:clamp(24px,5vw,56px) clamp(24px,7vw,110px);display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:24px}.cover .bot .nm{font-size:clamp(30px,4.4vw,60px);letter-spacing:-.03em}
+.rows{margin-top:44px;border-top:2px solid var(--fg);max-width:1000px}.rows p{padding:22px 0;border-bottom:1px solid var(--line);font-size:clamp(22px,3vw,40px);letter-spacing:-.03em;line-height:1.15}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:24px;margin-top:36px}.stats div{border-top:2px solid var(--fg);padding-top:12px}.stats b{display:block;font-size:clamp(48px,7vw,104px);letter-spacing:-.05em;line-height:1}.stats span{display:block;color:var(--mute);font-size:16px;margin-top:6px}
+.txt{max-width:42em;color:var(--mute);margin-top:30px;font-size:clamp(16px,1.5vw,19px)}.txt p+p{margin-top:12px}
+.chk{list-style:none;padding:0;margin-top:34px;columns:2 340px;column-gap:48px;max-width:1000px}.chk li{break-inside:avoid;display:flex;gap:14px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line);font-size:clamp(18px,2vw,26px);letter-spacing:-.015em;color:var(--mute)}.chk i{flex:none;width:26px;height:26px;border:2px solid var(--line);border-radius:6px;position:relative}.chk li.ok{color:var(--fg)}.chk li.ok i{background:var(--fg);border-color:var(--fg)}.chk li.ok i:after{content:"";position:absolute;left:7px;top:2px;width:7px;height:13px;border:solid var(--bg);border-width:0 3px 3px 0;transform:rotate(45deg)}
+.j3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,44px);margin-top:20px}.j3 div{font-size:clamp(17px,1.8vw,23px);line-height:1.35}.j3 b{display:block;font-size:clamp(28px,3.6vw,48px);letter-spacing:-.04em;margin-bottom:6px}
+.ig{display:grid;grid-template-columns:minmax(150px,240px) 1fr;gap:clamp(24px,5vw,72px);align-items:center;margin-top:34px}.ig svg{width:100%;height:auto}.sq{fill:none;stroke:var(--fg);stroke-width:3;transition:fill .25s,stroke .25s}.sq.on{fill:var(--acc);stroke:var(--acc)}.stage{padding:16px 0;border-top:2px solid var(--fg);cursor:pointer}.stage:focus-visible{outline:3px solid var(--acc);outline-offset:4px}.stage b{display:block;font-size:clamp(24px,3vw,40px);letter-spacing:-.03em;margin-bottom:6px;transition:color .25s}.stage.on b{color:var(--acc)}.stage span{color:var(--mute)}
+@media (max-width:720px){.j3,.ig,.fun{grid-template-columns:1fr}.ig svg{max-width:170px}.fun .draw{max-width:300px}}
+.fun{display:grid;grid-template-columns:minmax(220px,360px) 1fr;gap:clamp(24px,5vw,72px);align-items:start;margin-top:32px}
+.calw{overflow-x:auto;margin-top:22px}.cal{display:grid;grid-template-columns:repeat(7,minmax(88px,1fr));min-width:640px;border-top:2px solid var(--fg);border-left:1px solid var(--line)}.wd{padding:8px;color:var(--mute);font-size:14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.cd{min-height:96px;padding:6px 8px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start;gap:5px}.dn{font-size:14px;color:var(--mute)}.ev{font-size:12px;color:var(--acc)}.ch{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;line-height:1.3;border:1.5px solid var(--fg)}.ch.i{background:var(--fg);color:var(--bg)}.ch.p{border-style:dashed}.ch.r{background:var(--acc);border-color:var(--acc);color:#fff}.lg{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;align-items:center}.cl{list-style:none;padding:0;margin-top:24px;columns:2 360px;column-gap:40px}.cl li{break-inside:avoid;padding:9px 0;border-bottom:1px solid var(--line);font-size:clamp(15px,1.5vw,18px)}.cl b{margin-right:6px}
+.band,.bar{fill:none;stroke:var(--fg);stroke-width:4;stroke-linejoin:round;cursor:pointer;transition:fill .25s,stroke .25s}.band.on,.bar.on{fill:var(--acc);stroke:var(--acc)}
+.bt,.bl{font-family:"Caveat","Segoe Print",cursive;font-weight:600;pointer-events:none}.bt{font-size:30px;text-anchor:middle}.bl{font-size:28px}.draw text.w{fill:#fff}
+.fp{min-height:18em;margin-top:22px}.fp h3{font-weight:700;font-size:clamp(28px,3.6vw,48px);letter-spacing:-.04em;line-height:1.1}.fp h3 span{font-weight:400;color:var(--mute);font-size:.55em;letter-spacing:-.02em;display:block;margin-top:4px}.fp .ds{margin-top:14px;max-width:40em;font-size:clamp(17px,1.8vw,23px)}.fp .lb{margin-top:18px;color:var(--mute)}.fp ul{list-style:none;padding:0;margin-top:6px;columns:2 300px;column-gap:40px}.fp li{break-inside:avoid;padding:9px 0;border-bottom:1px solid var(--line);font-size:clamp(17px,1.8vw,23px)}.fp .kp{margin-top:18px;font-size:clamp(17px,1.8vw,23px)}.fp .ex{margin-top:20px;border-left:4px solid var(--acc);padding-left:16px;font-size:clamp(18px,2vw,26px);letter-spacing:-.015em}
+@media (max-width:720px){.steps{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" aria-hidden="true"><filter id="w"><feTurbulence type="fractalNoise" baseFrequency=".025" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter></svg>
+
+<section class="cover" aria-label="Capa">
+  <div class="top"><h1>Planejamento Estratégico de <b>Marketing</b></h1></div>
+  <div class="bot"><span class="nm">Pet &amp; Pet</span><span class="pill" style="cursor:default">Dez. - Fev.</span></div>
+</section>
+
+<section class="hoje" aria-label="Contexto inicial">
+  <h2>Contexto <b>inicial</b></h2>
+  <div class="rows">
+    <p>Abertura da terceira loja física em Indaiatuba</p>
+    <p>Falta de conteúdo nas redes sociais que comuniquem a presença das 3 lojas</p>
+    <p>Necessidade de fortalecimento e alcance da marca na cidade</p>
+  </div>
+</section>
+
+<section class="hoje" aria-label="Público">
+  <h2>Quem é o público da <b>Pet &amp; Pet?</b></h2>
+  <div class="stats">
+    <div><b>51%</b><span>são homens</span></div>
+    <div><b>25%</b><span>têm entre 35 e 44 anos</span></div>
+    <div><b>62%</b><span>não possuem filhos</span></div>
+    <div><b>63%</b><span>têm interesse em uma vida fitness</span></div>
+  </div>
+  <div class="txt">
+    <p>Atendemos donos de pet que moram em Indaiatuba. Segundo o Google Insights Finder, 51% do público (no Estado de SP, com interesse em pet) são homens, 25% têm entre 35 e 44 anos (millennials) e 62% não possuem filhos. 63% têm interesse em uma vida fitness. São investidores, apaixonados por compras e “faça você mesmo”.</p>
+    <p>Cães e gatos são os pets mais comuns. Amam personalização e variedades. A experiência é valiosa para o público.</p>
+  </div>
+</section>
+
+<section class="hoje" aria-label="Pesquisa de público">
+  <h2>Pesquisa de <b>público</b></h2>
+  <p class="sub">(google forms, entrevista qualitativa, etc.)</p>
+  <ul class="chk">
+    <li class="ok"><i></i>demográfico + hábitos consumo</li>
+    <li class="ok"><i></i>quem eu sou agora</li>
+    <li class="ok"><i></i>meu problema</li>
+    <li><i></i>o que eu falo que quero</li>
+    <li><i></i>o que eu realmente quero</li>
+    <li><i></i>quem eu quero ser</li>
+    <li><i></i>o que eu amo em mim</li>
+    <li><i></i>o que eu odeio em mim</li>
+    <li><i></i>o que eu amo no mundo</li>
+    <li><i></i>o que eu odeio no mundo</li>
+    <li><i></i>ideologia, mitos e códigos culturais</li>
+  </ul>
+</section>
+
+<section class="hoje" aria-label="Abertura">
+  <h1>O que descobrimos sobre os <b>concorrentes?</b></h1>
+  <p class="sub">benchmarking: pesquisa de concorrentes</p>
+</section>
+
+<section class="hoje" aria-label="A ideia">
+  <p class="state">A ideia é construir uma comunicação que equilibre <b>posicionamento institucional</b> e <b>publicidade de produtos</b>, semelhantemente aos concorrentes.</p>
+  <div class="draw" role="img" aria-label="Gangorra em equilíbrio entre produto e institucional, com Cobasi, Petz, Chewy, Zee.Dog e Petlove posicionadas ao longo da viga. Os botões abaixo explicam cada marca.">
+    <svg viewBox="0 0 800 330">
+      <g filter="url(#w)">
+        <path class="ln" d="M60 250 L740 250"/>
+        <path class="ln" d="M365 330 L400 252 L435 330 Z"/>
+        <circle class="dotc" id="d-cobasi" cx="130" cy="228" r="14"/>
+        <circle class="dotc" id="d-petz" cx="225" cy="228" r="14"/>
+        <circle class="dotc" id="d-chewy" cx="320" cy="228" r="14"/>
+        <circle class="dotc" id="d-zee" cx="470" cy="228" r="14"/>
+        <circle class="dotc" id="d-petlove" cx="670" cy="228" r="14"/>
+      </g>
+      <text class="mark" x="130" y="192" text-anchor="middle" font-size="26">Cobasi</text>
+      <text class="mark" x="225" y="192" text-anchor="middle" font-size="26">Petz</text>
+      <text class="mark" x="320" y="192" text-anchor="middle" font-size="26">Chewy</text>
+      <text class="mark" x="470" y="192" text-anchor="middle" font-size="26">Zee.Dog</text>
+      <text class="mark" x="670" y="192" text-anchor="middle" font-size="26">Petlove</text>
+      <text class="mark" x="60" y="290" font-size="28">produto</text>
+      <text class="mark" x="740" y="290" text-anchor="end" font-size="28">institucional</text>
+    </svg>
+  </div>
+  <div class="brands" id="brands"></div>
+  <p class="panel" id="panel">Toque em uma marca para ver o que ela ensina.</p>
+</section>
+
+<section class="pode" aria-label="A oportunidade">
+  <p class="state">Há, no entanto, oportunidade para construir uma identidade própria e local: mostrar as três lojas, as equipes e a experiência de compra, e apresentar os produtos dentro da rotina do pet, como a Chewy e a Zee.Dog fazem.</p>
+</section>
+
+<section class="hoje" aria-label="Ranking de referências">
+  <h2>As marcas em que mais queremos <b>nos inspirar.</b></h2>
+  <ol>
+    <li class="rk"><span class="n">1</span><div><strong>Chewy</strong><span>Apresenta produtos em situações reais, priorizando os pets e criando conexão emocional.</span></div></li>
+    <li class="rk"><span class="n">2</span><div><strong>Zee.Dog</strong><span>Posicionamento bem definido e capacidade de transformar o propósito em ações e conteúdos.</span></div></li>
+    <li class="rk"><span class="n">3</span><div><strong>Petlove</strong><span>Conecta conteúdos educativos, posicionamento institucional e soluções para os tutores.</span></div></li>
+    <li class="rk"><span class="n">4</span><div><strong>Cobasi</strong><span>Presença consolidada e experiência em varejo, mas uma abordagem que não queremos reproduzir por inteiro.</span></div></li>
+  </ol>
+</section>
+
+<section class="pode" aria-label="O momento atual">
+  <h2>E por onde <b>começar.</b></h2>
+  <div class="draw" role="img" aria-label="Desenho de três lojas, a terceira tracejada, em inauguração.">
+    <svg viewBox="0 0 640 230">
+      <g filter="url(#w)">
+        <path class="ln" d="M40 210 V120 L100 70 L160 120 V210 Z"/>
+        <path class="ln" d="M250 210 V120 L310 70 L370 120 V210 Z"/>
+        <path class="ln" style="stroke:var(--acc);stroke-dasharray:12 12" d="M460 210 V120 L520 70 L580 120 V210 Z"/>
+      </g>
+      <text class="mark" x="100" y="40" text-anchor="middle" font-size="26">loja</text>
+      <text class="mark" x="310" y="40" text-anchor="middle" font-size="26">loja</text>
+      <text class="mark" x="520" y="40" text-anchor="middle" font-size="26" style="fill:var(--acc)">em inauguração</text>
+    </svg>
+  </div>
+  <div class="steps">
+    <div><b>Primeiro,</b>fazer as pessoas conhecerem e se conectarem com a Pet &amp; Pet.</div>
+    <div><b>Depois,</b>mostrar tudo o que temos para oferecer, de maneira criativa, relevante e conectada ao universo dos pets.</div>
+  </div>
+</section>
+
+<section class="hoje" aria-label="Jornada do consumidor ideal">
+  <h2>A Jornada do <b>Consumidor Ideal</b></h2>
+  <div class="draw" style="max-width:none" role="img" aria-label="Caminho desenhado à mão passando por três pontos: descoberta, consideração e compra.">
+    <svg viewBox="0 0 900 90"><g filter="url(#w)"><path class="ln" style="stroke-dasharray:4 12" d="M20 55 C130 0 230 80 330 40 S540 10 640 50 S800 80 880 30"/><circle class="dotc on" cx="20" cy="55" r="14"/><circle class="dotc on" cx="330" cy="40" r="14"/><circle class="dotc on" cx="640" cy="50" r="14"/></g></svg>
+  </div>
+  <div class="j3">
+    <div><b>Descoberta</b>viu um post da pet &amp; pet no instagram / reconheceu a loja física</div>
+    <div><b>Consideração</b>precisou comprar ração para o gato e lembrou da pet &amp; pet. viu que ela tem o melhor preço entre as pet shops</div>
+    <div><b>Compra</b>foi até a loja, comprou ração e um brinquedo pro pet</div>
+  </div>
+</section>
+
+<section class="pode" aria-label="E se replicarmos a jornada no Instagram">
+  <h2>E se replicarmos a jornada do cliente na <b>página do Instagram?</b></h2>
+  <div class="ig">
+    <svg viewBox="0 0 200 330" role="img" aria-label="Feed do Instagram desenhado: cada coluna de posts corresponde a uma etapa da jornada."><g filter="url(#w)"><rect class="ln" x="10" y="4" width="180" height="322" rx="26"/><circle class="ln" cx="40" cy="28" r="9"/><path class="ln" d="M62 28 H130"/><rect class="sq" data-c="0" x="26" y="54" width="44" height="44"/><rect class="sq" data-c="1" x="78" y="54" width="44" height="44"/><rect class="sq" data-c="2" x="130" y="54" width="44" height="44"/><rect class="sq" data-c="0" x="26" y="106" width="44" height="44"/><rect class="sq" data-c="1" x="78" y="106" width="44" height="44"/><rect class="sq" data-c="2" x="130" y="106" width="44" height="44"/><rect class="sq" data-c="0" x="26" y="158" width="44" height="44"/><rect class="sq" data-c="1" x="78" y="158" width="44" height="44"/><rect class="sq" data-c="2" x="130" y="158" width="44" height="44"/><rect class="sq" data-c="0" x="26" y="210" width="44" height="44"/><rect class="sq" data-c="1" x="78" y="210" width="44" height="44"/><rect class="sq" data-c="2" x="130" y="210" width="44" height="44"/></g></svg>
+    <div>
+      <div class="stage" tabindex="0"><b>Descoberta</b><span>trends, vídeos virais, campanhas sazonais, aniversários, eventos, inauguração…</span></div>
+      <div class="stage" tabindex="0"><b>Consideração</b><span>novos produtos, dicas, lembretes, recomendações de influencers, reviews, promoções, primeira compra…</span></div>
+      <div class="stage" tabindex="0"><b>Compra</b><span>vale, ticket promocional, compre um leve outro, kits, bônus, cupons, últimas unidades, promoção relâmpago…</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="hoje" aria-label="Etapas do funil">
+  <h2>Etapas do <b>funil</b></h2>
+  <p class="sub">Definem o objetivo estratégico da comunicação — o que queremos gerar no consumidor.</p>
+  <div class="fun">
+    <div class="draw" style="margin:0" role="img" aria-label="Funil desenhado com três etapas: descoberta, consideração e aquisição.">
+      <svg viewBox="0 0 300 270"><g filter="url(#w)"><path class="band" d="M10 10 H290 L246 92 H54 Z"/><path class="band" d="M62 104 H238 L212 174 H88 Z"/><path class="band" d="M96 186 H204 L190 258 H110 Z"/></g><text class="bt" x="150" y="58">Descoberta</text><text class="bt" x="150" y="146">Consideração</text><text class="bt" x="150" y="228">Aquisição</text></svg>
+    </div>
+    <div><div class="brands" id="fbtn"></div><div class="fp" id="fp"></div></div>
+  </div>
+</section>
+
+<section class="pode" aria-label="Editorias">
+  <h2><b>Editorias</b></h2>
+  <p class="sub">definem os territórios de conteúdo — sobre o que vamos falar e de que maneira</p>
+  <div class="draw" style="max-width:900px" role="img" aria-label="Quatro editorias desenhadas como barras sobre as três etapas do funil.">
+    <svg viewBox="0 0 900 290"><text class="mark" x="150" y="26" text-anchor="middle" font-size="28">Descoberta</text><text class="mark" x="450" y="26" text-anchor="middle" font-size="28">Consideração</text><text class="mark" x="750" y="26" text-anchor="middle" font-size="28">Aquisição</text>
+      <g filter="url(#w)"><path class="ln" style="stroke-dasharray:3 10;stroke-opacity:.5" d="M300 40 V285 M600 40 V285"/><rect class="bar" x="20" y="50" width="260" height="46" rx="23"/><rect class="bar" x="20" y="110" width="560" height="46" rx="23"/><rect class="bar" x="320" y="170" width="560" height="46" rx="23"/><rect class="bar" x="620" y="230" width="260" height="46" rx="23"/></g>
+      <text class="bl" x="42" y="81">INSTITUCIONAL</text><text class="bl" x="42" y="141">TREND</text><text class="bl" x="342" y="201">PRODUTO</text><text class="bl" x="642" y="261">PROMOÇÃO</text></svg>
+  </div>
+  <div class="brands" id="ebtn"></div><div class="fp" id="ep"></div>
+</section>
+
+<section class="hoje" aria-label="Calendário de conteúdo">
+  <h2>Calendário de <b>conteúdo</b></h2>
+  <p class="sub">Dezembro a fevereiro, 3 posts por semana (terça, quinta e sábado). A inauguração da terceira loja é no dia 28/11, e o calendário começa logo em seguida.</p>
+  <p class="sub red" style="margin-top:8px;font-size:15px">rascunho: calendário proposto, ainda não aprovado</p>
+  <div class="lg"><span class="ch i">Institucional</span><span class="ch t">Trend</span><span class="ch p">Produto</span><span class="ch r">Promoção</span></div>
+  <div class="brands" id="cbtn" style="margin-top:20px"></div>
+  <div class="calw"><div class="cal" id="cal"></div></div>
+  <ul class="cl" id="cl"></ul>
+</section>
+
+<script>
+var B=[["cobasi","Cobasi","A mais tradicional na comunicação: muito produto, campanhas comerciais e impulsionamento. Pode ficar comercial e previsível."],
+["petz","Petz","Alterna entre dicas e produtos, e quase não sai disso."],
+["chewy","Chewy","Apresenta produtos sem ficar excessivamente comercial. O foco está no animal, e o produto aparece na rotina do pet."],
+["zee","Zee.Dog","Missão clara: conectar cachorros e pessoas. Materializa o propósito em ações, como corridas e eventos."],
+["petlove","Petlove","Digital first, com serviços, saúde e bem-estar. Conteúdo que educa e apresenta as soluções do ecossistema."]];
+var box=document.getElementById("brands"),pn=document.getElementById("panel");
+B.forEach(function(b){var e=document.createElement("button");e.className="pill";e.textContent=b[1];e.setAttribute("aria-pressed","false");
+e.onclick=function(){[].forEach.call(box.children,function(x){x.setAttribute("aria-pressed","false")});
+B.forEach(function(c){document.getElementById("d-"+c[0]).classList.remove("on")});
+e.setAttribute("aria-pressed","true");document.getElementById("d-"+b[0]).classList.add("on");pn.textContent=b[2]};box.appendChild(e)});
+var stg=[].slice.call(document.querySelectorAll(".stage")),sqs=[].slice.call(document.querySelectorAll(".sq"));
+function hl(i){stg.forEach(function(s,k){s.classList.toggle("on",k==i)});sqs.forEach(function(q){q.classList.toggle("on",+q.dataset.c==i)})}
+stg.forEach(function(s,k){["mouseenter","focus","click"].forEach(function(e){s.addEventListener(e,function(){hl(k)})})});hl(0);
+var F=[["Descoberta","(Brand Equity, Brand Awareness)",["Campanhas institucionais.","Campanhas de presença local.","Influenciadores e parcerias.","Conteúdos virais e compartilháveis"],"alcance local, frequência, awareness, recall e buscas pela marca"],
+["Consideração","(Geração de demanda)",["Demonstração de produtos.","Identificação de problemas cotidianos.","Demonstração de erros comuns dos tutores.","Comparações entre soluções.","Apresentação de benefícios, vantagens e funcionalidades.","Conteúdo de situações reais."],"compartilhamentos, salvamentos, visitas ao perfil, consultas sobre produtos, cliques e intenção de compra."],
+["Aquisição","(Compra)",["Ofertas e descontos.","Promoções de produtos.","Combos.","Anúncios comerciais.","Cupons.","Chamadas para visitar as lojas ou comprar pelo WhatsApp."],"conversas comerciais, vendas atribuídas, novos clientes, taxa de conversão, CAC, receita e ROAS."]];
+var E=[["INSTITUCIONAL","descoberta","Construir reconhecimento, identidade e percepção de marca. Fazer com que as pessoas conheçam a Pet & Pet, se lembrem de sua presença na cidade e tenham motivos para lembrar dela.",["Apresentação da marca.","Bastidores das lojas e equipe.","Presença nos bairros e na cidade.","Histórias de clientes e seus pets.","Parcerias e influenciadores locais.","Conteúdos que reforcem posicionamento e diferenciais."],"“Indaiatuba tem três lugares onde o amor pelos pets encontra tudo o que eles precisam. Você já conhece nossas lojas?”"],
+["TREND","descoberta e consideração","Aproveitar assuntos, formatos, comportamentos e tendências da internet para aumentar a distribuição e aproximar a marca da cultura dos tutores.",["Memes e situações identificáveis.","Áudios e formatos em alta.","Humor sobre o comportamento dos pets.","Trends adaptadas à realidade da loja.","Conteúdos compartilháveis."],"um meme sobre o cachorro que tem mais brinquedos que o próprio tutor, adaptado ao catálogo da Pet & Pet."],
+["PRODUTO","consideração e aquisição","Apresentar produtos como soluções para necessidades, problemas e desejos dos tutores.",["Demonstrações práticas.","Problemas cotidianos que o produto resolve.","Comparações entre produtos.","Funcionalidades e diferenciais.","Situações de uso no dia a dia."],"“Seu cachorro não para quieto na hora de colocar a coleira? Olha essa opção que facilita o passeio.”"],
+["PROMOÇÃO","aquisição","Estimular a decisão de compra por meio de condições comerciais, oportunidades e ofertas.",["Descontos e ofertas.","Combos e kits.","Produtos em destaque com preço.","Campanhas sazonais.","Cupons e condições especiais.","Chamadas para comprar ou visitar as lojas."],"“Seu pet merece um mimo! Brinquedos selecionados com até 30% OFF nesta semana.”"]];
+function li(a){return a.map(function(x){return "<li>"+x+"</li>"}).join("")}
+function mk(box,names,fn){names.forEach(function(n,i){var b=document.createElement("button");b.className="pill";b.textContent=n;b.setAttribute("aria-pressed","false");b.onclick=function(){fn(i)};box.appendChild(b)})}
+var fb=document.getElementById("fbtn"),fp=document.getElementById("fp"),bd=[].slice.call(document.querySelectorAll(".band")),bt=[].slice.call(document.querySelectorAll(".bt"));
+function sf(i){[].forEach.call(fb.children,function(b,k){b.setAttribute("aria-pressed",k==i)});bd.forEach(function(b,k){b.classList.toggle("on",k==i);bt[k].classList.toggle("w",k==i)});var d=F[i];fp.innerHTML="<h3>"+(i+1)+". "+d[0]+"<span>"+d[1]+"</span></h3><p class='lb'>Ações:</p><ul>"+li(d[2])+"</ul><p class='kp'><b>KPIs:</b> "+d[3]+"</p>"}
+mk(fb,F.map(function(d){return d[0]}),sf);bd.forEach(function(b,k){b.addEventListener("click",function(){sf(k)})});sf(0);
+var eb=document.getElementById("ebtn"),ep=document.getElementById("ep"),br=[].slice.call(document.querySelectorAll(".bar")),bl=[].slice.call(document.querySelectorAll(".bl"));
+function se(i){[].forEach.call(eb.children,function(b,k){b.setAttribute("aria-pressed",k==i)});br.forEach(function(b,k){b.classList.toggle("on",k==i);bl[k].classList.toggle("w",k==i)});var d=E[i];ep.innerHTML="<h3>"+(i+1)+". "+d[0]+"<span>(etapa do funil: "+d[1]+")</span></h3><p class='ds'>"+d[2]+"</p><ul>"+li(d[3])+"</ul><p class='ex'><b>Exemplo:</b> "+d[4]+"</p>"}
+mk(eb,E.map(function(d){return d[0]}),se);br.forEach(function(b,k){b.addEventListener("click",function(){se(k)})});se(0);
+var N={i:"Institucional",t:"Trend",p:"Produto",r:"Promoção"},WD=["dom","seg","ter","qua","qui","sex","sáb"];
+var C=[{n:"Dezembro",m:12,d:31,o:2,e:{24:"véspera de Natal",25:"Natal",31:"Réveillon"},p:[[1,"i","Obrigado pela inauguração: melhores momentos da loja nova"],[3,"t","Humor: o pet que já sabe o caminho da loja"],[5,"p","Demonstração: a coleira que facilita o passeio"],[8,"i","Bastidores: a equipe das três lojas"],[10,"t","Áudio em alta com o comportamento do pet"],[12,"r","Brinquedos selecionados em promoção"],[15,"i","Presença nos bairros: onde estão as 3 lojas"],[17,"p","Erros comuns dos tutores no dia a dia"],[19,"r","Kits de Natal para o pet"],[22,"p","Presentes para o pet: comparação entre opções"],[24,"i","Mensagem de Natal e horários das lojas"],[26,"t","Humor: o pet com os brinquedos novos do Natal"],[29,"i","Histórias de clientes e seus pets em 2026"],[31,"p","Réveillon: itens de conforto para pets com medo de fogos"]]},
+{n:"Janeiro",m:1,d:31,o:5,e:{1:"Ano Novo"},p:[[2,"i","Ano novo, 3 lojas: apresentação da marca para 2027"],[5,"t","Humor: o pet e as resoluções de ano novo"],[7,"p","Verão: itens para o calor, hidratação e passeio"],[9,"r","Ofertas de início de ano"],[12,"i","Parcerias e influenciadores locais"],[14,"p","Comparação entre duas opções do mesmo produto"],[16,"t","Meme: o cachorro com mais brinquedos que o tutor"],[19,"i","Bastidores: um dia na loja"],[21,"p","Problemas cotidianos que o produto resolve"],[23,"r","Combos e kits da semana"],[26,"t","Trend adaptada à realidade da loja"],[28,"p","Funcionalidades e diferenciais"],[30,"r","Cupom de primeira compra"]]},
+{n:"Fevereiro",m:2,d:28,o:1,e:{6:"Carnaval",7:"Carnaval",8:"Carnaval",9:"Carnaval"},p:[[2,"i","Histórias de clientes: tutor e pet"],[4,"p","Situações de uso no dia a dia"],[6,"t","Carnaval: o pet em modo folia"],[9,"r","Campanha sazonal de Carnaval"],[11,"i","Posicionamento e diferenciais da Pet &amp; Pet"],[13,"p","Demonstração prática"],[16,"i","Presença na cidade: a comunidade de tutores"],[18,"p","Comparação entre soluções"],[20,"r","Produtos em destaque com preço"],[23,"t","Áudio em alta com o comportamento do pet"],[25,"p","Situações reais de uso"],[27,"r","Chamada para visitar as lojas ou comprar pelo WhatsApp"]]}];
+var cb=document.getElementById("cbtn");
+function z(n){return ("0"+n).slice(-2)}
+function cal(k){var c=C[k],h="",pm={};[].forEach.call(cb.children,function(b,j){b.setAttribute("aria-pressed",j==k)});WD.forEach(function(w){h+="<div class='wd'>"+w+"</div>"});for(var j=0;j<c.o;j++)h+="<div class='cd'></div>";c.p.forEach(function(p){pm[p[0]]=p});for(var d=1;d<=c.d;d++){var p=pm[d],ev=c.e[d];h+="<div class='cd'><span class='dn'>"+d+"</span>"+(ev?"<span class='ev'>"+ev+"</span>":"")+(p?"<span class='ch "+p[1]+"' title='"+p[2]+"'>"+N[p[1]]+"</span>":"")+"</div>"}
+document.getElementById("cal").innerHTML=h;
+document.getElementById("cl").innerHTML=c.p.map(function(p){return "<li><b>"+WD[(c.o+p[0]-1)%7]+" "+z(p[0])+"/"+z(c.m)+"</b> <span class='ch "+p[1]+"'>"+N[p[1]]+"</span> "+p[2]+"</li>"}).join("")}
+mk(cb,C.map(function(c){return c.n}),cal);cal(0);
+</script>
+</body>
+</html>
